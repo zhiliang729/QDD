@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70EFF00B1DE3018600D1179A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF00A1DE3018600D1179A /* AppDelegate.swift */; };
-		70EFF00D1DE3018600D1179A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF00C1DE3018600D1179A /* ViewController.swift */; };
-		70EFF0101DE3018600D1179A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF00E1DE3018600D1179A /* Main.storyboard */; };
-		70EFF0121DE3018600D1179A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0111DE3018600D1179A /* Assets.xcassets */; };
-		70EFF0151DE3018600D1179A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0131DE3018600D1179A /* LaunchScreen.storyboard */; };
+		5B9365272A8C401355181707 /* Pods_QDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7956D7A3A4049C3FA3201977 /* Pods_QDD.framework */; };
+		70EFF01D1DE44E3D00D1179A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFF01C1DE44E3D00D1179A /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0291DE4504000D1179A /* Assets.xcassets */; };
+		70EFF03B1DE4504000D1179A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0301DE4504000D1179A /* AppDelegate.swift */; };
+		70EFF03C1DE4504000D1179A /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0311DE4504000D1179A /* G.swift */; };
+		70EFF03D1DE4504000D1179A /* G_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0321DE4504000D1179A /* G_Ext.swift */; };
+		70EFF03E1DE4504000D1179A /* MainDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0331DE4504000D1179A /* MainDelegate.swift */; };
+		70EFF03F1DE4504000D1179A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0361DE4504000D1179A /* Info.plist */; };
+		70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF02B1DE4504000D1179A /* LaunchScreen.storyboard */; };
+		70EFF0411DE4510600D1179A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF02D1DE4504000D1179A /* Main.storyboard */; };
+		70EFF07E1DE4515100D1179A /* PlatformChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0541DE4515100D1179A /* PlatformChangeView.swift */; };
+		70EFF07F1DE4515100D1179A /* PlatformChangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0551DE4515100D1179A /* PlatformChangeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23E471109EE22BE2B529D507 /* Pods-QDD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.debug.xcconfig"; sourceTree = "<group>"; };
 		70EFF0071DE3018600D1179A /* QDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		70EFF00A1DE3018600D1179A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70EFF00C1DE3018600D1179A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		70EFF00F1DE3018600D1179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		70EFF0111DE3018600D1179A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		70EFF0141DE3018600D1179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		70EFF0161DE3018600D1179A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70EFF01C1DE44E3D00D1179A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		70EFF0291DE4504000D1179A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70EFF02C1DE4504000D1179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70EFF02E1DE4504000D1179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		70EFF0301DE4504000D1179A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70EFF0311DE4504000D1179A /* G.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
+		70EFF0321DE4504000D1179A /* G_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G_Ext.swift; sourceTree = "<group>"; };
+		70EFF0331DE4504000D1179A /* MainDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDelegate.swift; sourceTree = "<group>"; };
+		70EFF0341DE4504000D1179A /* QDD-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QDD-Bridging-Header.h"; sourceTree = "<group>"; };
+		70EFF0361DE4504000D1179A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70EFF0371DE4504000D1179A /* QDD.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = QDD.entitlements; sourceTree = "<group>"; };
+		70EFF0541DE4515100D1179A /* PlatformChangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformChangeView.swift; sourceTree = "<group>"; };
+		70EFF0551DE4515100D1179A /* PlatformChangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlatformChangeView.xib; sourceTree = "<group>"; };
+		760814D981F67584BF9B92E3 /* Pods-QDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.release.xcconfig"; sourceTree = "<group>"; };
+		7956D7A3A4049C3FA3201977 /* Pods_QDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		805602C75123C52DF7D74FA3 /* Pods-QDD.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.app store.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.app store.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EFF01D1DE44E3D00D1179A /* UserNotifications.framework in Frameworks */,
+				5B9365272A8C401355181707 /* Pods_QDD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +60,8 @@
 			children = (
 				70EFF0091DE3018600D1179A /* QDD */,
 				70EFF0081DE3018600D1179A /* Products */,
+				E05309C4585618CDD3191234 /* Pods */,
+				CF8CFBC8F273B72127B31369 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +76,79 @@
 		70EFF0091DE3018600D1179A /* QDD */ = {
 			isa = PBXGroup;
 			children = (
-				70EFF00A1DE3018600D1179A /* AppDelegate.swift */,
-				70EFF00C1DE3018600D1179A /* ViewController.swift */,
-				70EFF00E1DE3018600D1179A /* Main.storyboard */,
-				70EFF0111DE3018600D1179A /* Assets.xcassets */,
-				70EFF0131DE3018600D1179A /* LaunchScreen.storyboard */,
-				70EFF0161DE3018600D1179A /* Info.plist */,
+				70EFF0421DE4515100D1179A /* Utils */,
+				70EFF0291DE4504000D1179A /* Assets.xcassets */,
+				70EFF02A1DE4504000D1179A /* Base.lproj */,
+				70EFF02F1DE4504000D1179A /* Project */,
+				70EFF0351DE4504000D1179A /* Supporting Files */,
 			);
 			path = QDD;
+			sourceTree = "<group>";
+		};
+		70EFF02A1DE4504000D1179A /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				70EFF02B1DE4504000D1179A /* LaunchScreen.storyboard */,
+				70EFF02D1DE4504000D1179A /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		70EFF02F1DE4504000D1179A /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				70EFF0301DE4504000D1179A /* AppDelegate.swift */,
+				70EFF0311DE4504000D1179A /* G.swift */,
+				70EFF0321DE4504000D1179A /* G_Ext.swift */,
+				70EFF0331DE4504000D1179A /* MainDelegate.swift */,
+				70EFF0341DE4504000D1179A /* QDD-Bridging-Header.h */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		70EFF0351DE4504000D1179A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70EFF0361DE4504000D1179A /* Info.plist */,
+				70EFF0371DE4504000D1179A /* QDD.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70EFF0421DE4515100D1179A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				70EFF0531DE4515100D1179A /* platformView */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		70EFF0531DE4515100D1179A /* platformView */ = {
+			isa = PBXGroup;
+			children = (
+				70EFF0541DE4515100D1179A /* PlatformChangeView.swift */,
+				70EFF0551DE4515100D1179A /* PlatformChangeView.xib */,
+			);
+			path = platformView;
+			sourceTree = "<group>";
+		};
+		CF8CFBC8F273B72127B31369 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70EFF01C1DE44E3D00D1179A /* UserNotifications.framework */,
+				7956D7A3A4049C3FA3201977 /* Pods_QDD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E05309C4585618CDD3191234 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23E471109EE22BE2B529D507 /* Pods-QDD.debug.xcconfig */,
+				760814D981F67584BF9B92E3 /* Pods-QDD.release.xcconfig */,
+				805602C75123C52DF7D74FA3 /* Pods-QDD.app store.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70EFF0191DE3018600D1179A /* Build configuration list for PBXNativeTarget "QDD" */;
 			buildPhases = (
+				0BA51B584E9681DAB46F3882 /* [CP] Check Pods Manifest.lock */,
 				70EFF0031DE3018600D1179A /* Sources */,
 				70EFF0041DE3018600D1179A /* Frameworks */,
 				70EFF0051DE3018600D1179A /* Resources */,
+				36961BAA3331034CF8821B95 /* [CP] Embed Pods Frameworks */,
+				22813396729D3FB5839BC9AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +188,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 69P63E97NP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -124,41 +219,94 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70EFF0151DE3018600D1179A /* LaunchScreen.storyboard in Resources */,
-				70EFF0121DE3018600D1179A /* Assets.xcassets in Resources */,
-				70EFF0101DE3018600D1179A /* Main.storyboard in Resources */,
+				70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */,
+				70EFF0411DE4510600D1179A /* Main.storyboard in Resources */,
+				70EFF03F1DE4504000D1179A /* Info.plist in Resources */,
+				70EFF07F1DE4515100D1179A /* PlatformChangeView.xib in Resources */,
+				70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BA51B584E9681DAB46F3882 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		22813396729D3FB5839BC9AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QDD/Pods-QDD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36961BAA3331034CF8821B95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QDD/Pods-QDD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		70EFF0031DE3018600D1179A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70EFF00D1DE3018600D1179A /* ViewController.swift in Sources */,
-				70EFF00B1DE3018600D1179A /* AppDelegate.swift in Sources */,
+				70EFF03B1DE4504000D1179A /* AppDelegate.swift in Sources */,
+				70EFF03E1DE4504000D1179A /* MainDelegate.swift in Sources */,
+				70EFF03C1DE4504000D1179A /* G.swift in Sources */,
+				70EFF07E1DE4515100D1179A /* PlatformChangeView.swift in Sources */,
+				70EFF03D1DE4504000D1179A /* G_Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		70EFF00E1DE3018600D1179A /* Main.storyboard */ = {
+		70EFF02B1DE4504000D1179A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				70EFF00F1DE3018600D1179A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		70EFF0131DE3018600D1179A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70EFF0141DE3018600D1179A /* Base */,
+				70EFF02C1DE4504000D1179A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		70EFF02D1DE4504000D1179A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70EFF02E1DE4504000D1179A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -204,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -247,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -257,29 +405,99 @@
 		};
 		70EFF01A1DE3018600D1179A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E471109EE22BE2B529D507 /* Pods-QDD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
 				DEVELOPMENT_TEAM = 69P63E97NP;
-				INFOPLIST_FILE = QDD/Info.plist;
+				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hothuati.QDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "QDD/Project/QDD-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
 		70EFF01B1DE3018600D1179A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 760814D981F67584BF9B92E3 /* Pods-QDD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
 				DEVELOPMENT_TEAM = 69P63E97NP;
-				INFOPLIST_FILE = QDD/Info.plist;
+				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hothuati.QDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "QDD/Project/QDD-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
+		};
+		70EFF0951DE4518500D1179A /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "App Store";
+		};
+		70EFF0961DE4518500D1179A /* App Store */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 805602C75123C52DF7D74FA3 /* Pods-QDD.app store.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
+				DEVELOPMENT_TEAM = 69P63E97NP;
+				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D APP_STORE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hothuati.QDD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QDD/Project/QDD-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
+			};
+			name = "App Store";
 		};
 /* End XCBuildConfiguration section */
 
@@ -289,6 +507,7 @@
 			buildConfigurations = (
 				70EFF0171DE3018600D1179A /* Debug */,
 				70EFF0181DE3018600D1179A /* Release */,
+				70EFF0951DE4518500D1179A /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -298,8 +517,10 @@
 			buildConfigurations = (
 				70EFF01A1DE3018600D1179A /* Debug */,
 				70EFF01B1DE3018600D1179A /* Release */,
+				70EFF0961DE4518500D1179A /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

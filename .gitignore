@@ -1,0 +1,8 @@
+.DS_Store
+*build/
+*xcuserdata
+*.mode1v3
+*.pbxuser
+*.moved-aside/
+DerivedData
+
