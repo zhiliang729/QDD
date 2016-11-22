@@ -10,15 +10,9 @@
 		5B9365272A8C401355181707 /* Pods_QDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7956D7A3A4049C3FA3201977 /* Pods_QDD.framework */; };
 		70EFF01D1DE44E3D00D1179A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFF01C1DE44E3D00D1179A /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0291DE4504000D1179A /* Assets.xcassets */; };
-		70EFF03B1DE4504000D1179A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0301DE4504000D1179A /* AppDelegate.swift */; };
-		70EFF03C1DE4504000D1179A /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0311DE4504000D1179A /* G.swift */; };
-		70EFF03D1DE4504000D1179A /* G_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0321DE4504000D1179A /* G_Ext.swift */; };
-		70EFF03E1DE4504000D1179A /* MainDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0331DE4504000D1179A /* MainDelegate.swift */; };
 		70EFF03F1DE4504000D1179A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0361DE4504000D1179A /* Info.plist */; };
 		70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF02B1DE4504000D1179A /* LaunchScreen.storyboard */; };
 		70EFF0411DE4510600D1179A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF02D1DE4504000D1179A /* Main.storyboard */; };
-		70EFF07E1DE4515100D1179A /* PlatformChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFF0541DE4515100D1179A /* PlatformChangeView.swift */; };
-		70EFF07F1DE4515100D1179A /* PlatformChangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0551DE4515100D1179A /* PlatformChangeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,15 +22,9 @@
 		70EFF0291DE4504000D1179A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70EFF02C1DE4504000D1179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70EFF02E1DE4504000D1179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		70EFF0301DE4504000D1179A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70EFF0311DE4504000D1179A /* G.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
-		70EFF0321DE4504000D1179A /* G_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G_Ext.swift; sourceTree = "<group>"; };
-		70EFF0331DE4504000D1179A /* MainDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDelegate.swift; sourceTree = "<group>"; };
 		70EFF0341DE4504000D1179A /* QDD-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QDD-Bridging-Header.h"; sourceTree = "<group>"; };
 		70EFF0361DE4504000D1179A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70EFF0371DE4504000D1179A /* QDD.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = QDD.entitlements; sourceTree = "<group>"; };
-		70EFF0541DE4515100D1179A /* PlatformChangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformChangeView.swift; sourceTree = "<group>"; };
-		70EFF0551DE4515100D1179A /* PlatformChangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlatformChangeView.xib; sourceTree = "<group>"; };
 		760814D981F67584BF9B92E3 /* Pods-QDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.release.xcconfig"; sourceTree = "<group>"; };
 		7956D7A3A4049C3FA3201977 /* Pods_QDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805602C75123C52DF7D74FA3 /* Pods-QDD.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.app store.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.app store.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +64,6 @@
 		70EFF0091DE3018600D1179A /* QDD */ = {
 			isa = PBXGroup;
 			children = (
-				70EFF0421DE4515100D1179A /* Utils */,
 				70EFF0291DE4504000D1179A /* Assets.xcassets */,
 				70EFF02A1DE4504000D1179A /* Base.lproj */,
 				70EFF02F1DE4504000D1179A /* Project */,
@@ -97,10 +84,6 @@
 		70EFF02F1DE4504000D1179A /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				70EFF0301DE4504000D1179A /* AppDelegate.swift */,
-				70EFF0311DE4504000D1179A /* G.swift */,
-				70EFF0321DE4504000D1179A /* G_Ext.swift */,
-				70EFF0331DE4504000D1179A /* MainDelegate.swift */,
 				70EFF0341DE4504000D1179A /* QDD-Bridging-Header.h */,
 			);
 			path = Project;
@@ -113,23 +96,6 @@
 				70EFF0371DE4504000D1179A /* QDD.entitlements */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		70EFF0421DE4515100D1179A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				70EFF0531DE4515100D1179A /* platformView */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		70EFF0531DE4515100D1179A /* platformView */ = {
-			isa = PBXGroup;
-			children = (
-				70EFF0541DE4515100D1179A /* PlatformChangeView.swift */,
-				70EFF0551DE4515100D1179A /* PlatformChangeView.xib */,
-			);
-			path = platformView;
 			sourceTree = "<group>";
 		};
 		CF8CFBC8F273B72127B31369 /* Frameworks */ = {
@@ -222,7 +188,6 @@
 				70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */,
 				70EFF0411DE4510600D1179A /* Main.storyboard in Resources */,
 				70EFF03F1DE4504000D1179A /* Info.plist in Resources */,
-				70EFF07F1DE4515100D1179A /* PlatformChangeView.xib in Resources */,
 				70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,11 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70EFF03B1DE4504000D1179A /* AppDelegate.swift in Sources */,
-				70EFF03E1DE4504000D1179A /* MainDelegate.swift in Sources */,
-				70EFF03C1DE4504000D1179A /* G.swift in Sources */,
-				70EFF07E1DE4515100D1179A /* PlatformChangeView.swift in Sources */,
-				70EFF03D1DE4504000D1179A /* G_Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,9 +5,72 @@ PODS:
   - FDFullscreenPopGesture (1.1)
   - JPush (2.2.0)
   - Kingfisher (3.2.1)
+  - KSCrash (1.8.13):
+    - KSCrash/Installations (= 1.8.13)
+  - KSCrash/Installations (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting
+  - KSCrash/Recording (1.8.13)
+  - KSCrash/Reporting (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters (= 1.8.13)
+    - KSCrash/Reporting/MessageUI (= 1.8.13)
+    - KSCrash/Reporting/Sinks (= 1.8.13)
+    - KSCrash/Reporting/Tools (= 1.8.13)
+  - KSCrash/Reporting/Filters (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Alert (= 1.8.13)
+    - KSCrash/Reporting/Filters/AppleFmt (= 1.8.13)
+    - KSCrash/Reporting/Filters/Base (= 1.8.13)
+    - KSCrash/Reporting/Filters/Basic (= 1.8.13)
+    - KSCrash/Reporting/Filters/GZip (= 1.8.13)
+    - KSCrash/Reporting/Filters/JSON (= 1.8.13)
+    - KSCrash/Reporting/Filters/Sets (= 1.8.13)
+    - KSCrash/Reporting/Filters/Stringify (= 1.8.13)
+    - KSCrash/Reporting/Filters/Tools (= 1.8.13)
+  - KSCrash/Reporting/Filters/Alert (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/AppleFmt (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Base (1.8.13):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/GZip (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/JSON (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Sets (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/AppleFmt
+    - KSCrash/Reporting/Filters/Base
+    - KSCrash/Reporting/Filters/Basic
+    - KSCrash/Reporting/Filters/GZip
+    - KSCrash/Reporting/Filters/JSON
+    - KSCrash/Reporting/Filters/Stringify
+  - KSCrash/Reporting/Filters/Stringify (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Tools (1.8.13):
+    - KSCrash/Recording
+  - KSCrash/Reporting/MessageUI (1.8.13):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Sinks (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters
+    - KSCrash/Reporting/Tools
+  - KSCrash/Reporting/Tools (1.8.13):
+    - KSCrash/Recording
   - MOBFoundation (2.2.3)
   - ObjectMapper (2.2.1)
   - ReachabilitySwift (3)
+  - SentrySwift (0.4.1):
+    - KSCrash (~> 1.8.5)
   - ShareSDK3 (3.5.2):
     - ShareSDK3/ShareSDK (= 3.5.2)
   - ShareSDK3/ShareSDK (3.5.2)
@@ -29,6 +92,7 @@ DEPENDENCIES:
   - MOBFoundation
   - ObjectMapper (~> 2.2)
   - ReachabilitySwift (~> 3)
+  - SentrySwift
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/QQ
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
@@ -43,13 +107,15 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   JPush: 14bd5ff248fbef9c2179c82a9d1120e573b1c66a
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  KSCrash: 4c3a83f133b60f4bd57e05235ebf8d46e36d378d
   MOBFoundation: 2bc5cd7011a2db75cf2b3ceacb7f4227eec88f3e
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SentrySwift: 186a042c29180eb93e8bf6db6ceb9988bd9c301e
   ShareSDK3: 08ed714e2bbdcd97ab60f58cb398227341dfc20a
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: b0758a84fcdc1dc3060d2503aa8e841c3227e6ea
+PODFILE CHECKSUM: f0026e362039f3566ce46653cf824bb6cc72a358
 
 COCOAPODS: 1.0.1

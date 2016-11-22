@@ -57,7 +57,7 @@ pod 'Kingfisher' #sdwebimage原理相同的swift实现
 
 #pod 'SwiftString' #string 操作
 
-#pod 'SentrySwift' #Sentry raven库
+pod 'SentrySwift' #Sentry raven库
 
 #pod 'Spring' #动画view
 
