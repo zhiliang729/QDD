@@ -51,7 +51,7 @@ pod 'Alamofire', '~> 4'  #网络请求库
 pod 'AlamofireImage', '~> 3' #response Image
 
 pod 'SwiftyJSON'  #swift json parser
-pod 'ObjectMapper', '~> 2.2' #JSON -> model
+#pod 'ObjectMapper', '~> 2.2' #JSON -> model
 
 pod 'Kingfisher' #sdwebimage原理相同的swift实现
 
