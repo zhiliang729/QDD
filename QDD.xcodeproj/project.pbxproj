@@ -25,7 +25,6 @@
 		70CED6981DE571AC00FB463A /* PlatformChangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CED6961DE571AC00FB463A /* PlatformChangeView.xib */; };
 		70CED69A1DE574E700FB463A /* String_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CED6991DE574E700FB463A /* String_Ext.swift */; };
 		70DF1A981DE52E8E009DC176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A971DE52E8E009DC176 /* AppDelegate.swift */; };
-		70DF1A9A1DE52EA5009DC176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A991DE52EA5009DC176 /* ViewController.swift */; };
 		70DF1A9C1DE530F2009DC176 /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A9B1DE530F2009DC176 /* G.swift */; };
 		70DF1AA01DE5320E009DC176 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A9F1DE5320E009DC176 /* User.swift */; };
 		70DF1AA21DE540DF009DC176 /* G_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1AA11DE540DF009DC176 /* G_Ext.swift */; };
@@ -63,7 +62,6 @@
 		70CED6961DE571AC00FB463A /* PlatformChangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlatformChangeView.xib; sourceTree = "<group>"; };
 		70CED6991DE574E700FB463A /* String_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Ext.swift; sourceTree = "<group>"; };
 		70DF1A971DE52E8E009DC176 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70DF1A991DE52EA5009DC176 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		70DF1A9B1DE530F2009DC176 /* G.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
 		70DF1A9F1DE5320E009DC176 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		70DF1AA11DE540DF009DC176 /* G_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G_Ext.swift; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				70DF1AA11DE540DF009DC176 /* G_Ext.swift */,
 				70CED6921DE56FD900FB463A /* MainDelegate.swift */,
 				70DF1A971DE52E8E009DC176 /* AppDelegate.swift */,
-				70DF1A991DE52EA5009DC176 /* ViewController.swift */,
 				70EFF0341DE4504000D1179A /* QDD-Bridging-Header.h */,
 			);
 			path = Project;
@@ -464,7 +461,6 @@
 				7018C9E31DE684930043E2E1 /* WebViewDeleClass.swift in Sources */,
 				70CED6911DE56EF600FB463A /* BaseTabItemViewController.swift in Sources */,
 				70DF1A9C1DE530F2009DC176 /* G.swift in Sources */,
-				70DF1A9A1DE52EA5009DC176 /* ViewController.swift in Sources */,
 				7018C9E71DE687210043E2E1 /* UserDefaults_Ext.swift in Sources */,
 				70DF1AA21DE540DF009DC176 /* G_Ext.swift in Sources */,
 				70CED68F1DE56DFC00FB463A /* BaseViewController.swift in Sources */,

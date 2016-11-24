@@ -73,7 +73,7 @@ class MainDelegate: NSObject {
     //MARK: - push viewcontroller 建议所有push都用此方法
     func push(_ vc: UIViewController) {
         
-        vc.hidesBottomBarWhenPushed = true
+//        vc.hidesBottomBarWhenPushed = true
         curNavController?.pushViewController(vc, animated: true)
     }
 }

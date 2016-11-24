@@ -69,9 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MARK: -- 设置window相关
         configWindow()
-        
         //MARK: -- tabbar
         configTabbar()
+        
+        window?.makeKeyAndVisible()
         
         //MARK: -- 启动帮助页
         startHelp()
@@ -116,6 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: - window设置
     fileprivate func configWindow() {
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
     }
     
