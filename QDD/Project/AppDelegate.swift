@@ -115,13 +115,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    //MARK: - window设置
+    //MARK: -- window设置
     fileprivate func configWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
     }
     
-    //MARK: - tabbar设置
+    //MARK: -- tabbar设置
     fileprivate func configTabbar() {
         
         mainTabBar.delegate = mainDelegate
@@ -181,35 +181,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        application.applicationIconBadgeNumber = 9
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
         JPUSHService.resetBadge()
         JPUSHService.setBadge(0)
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        
-    }
-    
 }
 
 //MARK: - 检测网络变化
@@ -376,19 +364,15 @@ extension AppDelegate {
 
 
 import AdSupport
+import UserNotifications
 //MARK: - JPUSH config
-extension AppDelegate {
+extension AppDelegate: JPUSHRegisterDelegate {
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        JPUSHService.registerDeviceToken(deviceToken as Data!)
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        JPUSHService.registerDeviceToken(deviceToken)
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        JPUSHService.handleRemoteNotification(userInfo)
-    }
-    
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         G.shared.apnsNoti = userInfo
         
         alertRemoteNoti()
@@ -446,7 +430,16 @@ extension AppDelegate {
         
         let advertisingId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         if !UserDefaults.standard.bool(forKey: G.UserDefaultKey.closeAPNSNotification.rawValue) {
-            JPUSHService.register(forRemoteNotificationTypes: UIUserNotificationType.alert.rawValue | UIUserNotificationType.badge.rawValue | UIUserNotificationType.sound.rawValue, categories: nil)
+            
+            if #available(iOS 10, *) {
+                let entity = JPUSHRegisterEntity()
+                entity.types = NSInteger(UNAuthorizationOptions.alert.rawValue) |
+                    NSInteger(UNAuthorizationOptions.sound.rawValue) |
+                    NSInteger(UNAuthorizationOptions.badge.rawValue)
+                JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
+            } else {
+                JPUSHService.register(forRemoteNotificationTypes: UIUserNotificationType.alert.rawValue | UIUserNotificationType.badge.rawValue | UIUserNotificationType.sound.rawValue, categories: nil)
+            }
         }
         
         JPUSHService.setup(withOption: launchOptions,
@@ -459,13 +452,42 @@ extension AppDelegate {
         JPUSHService.setBadge(0)
         
         let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
-        if let noti = remoteNotification as? [String: AnyObject?] {
-            G.shared.apnsNoti = noti as [NSObject : AnyObject]?
+        if let noti = remoteNotification as? [AnyHashable : Any] {
+            G.shared.apnsNoti = noti as [AnyHashable : Any]
         }
         
         JPUSHService.setLogOFF()
         
         UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    
+    
+    
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+
+        if notification.request.trigger is UNPushNotificationTrigger {
+            let userInfo = notification.request.content.userInfo
+            G.shared.apnsNoti = userInfo
+            
+            alertRemoteNoti()
+            
+            JPUSHService.handleRemoteNotification(userInfo)
+        }
+        completionHandler(0)
+    }
+    
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
+        if response.notification.request.trigger is UNPushNotificationTrigger {
+            let userInfo = response.notification.request.content.userInfo
+            G.shared.apnsNoti = userInfo
+            
+            alertRemoteNoti()
+            
+            JPUSHService.handleRemoteNotification(userInfo)
+        }
+        completionHandler()
     }
     
     func networkDidReceiveMessage(_ noti: NSNotification) {

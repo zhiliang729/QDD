@@ -41,7 +41,7 @@ extension G {
     static let QQAppKey = "Mwm7ceIcIjdnl3SL"
     
     //MARK: -- JPUSH 相关信息
-    static let JPUSHAppKey = "d78517b6110fee47d597e4ab"
+    static let JPUSHAppKey = "40e8aa5ce00b7c802e5c743e"
     static let JPUSHChannel = "Apple Store"
     
     //MARK: -- Raven地址

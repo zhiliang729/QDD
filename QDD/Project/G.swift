@@ -30,7 +30,7 @@ class G {
     }
     
     //MARK: -- apns noti
-    var apnsNoti: [NSObject : AnyObject]?
+    var apnsNoti: [AnyHashable : Any]?
     
     //MARK: -- 是否已显示过帮助页
     var finishedStartHelp: Bool = false
