@@ -11,50 +11,50 @@ import WebKit
 
 class BaseWebViewController: BaseViewController {
     
-    var url: NSURL?
+    var url: URL?
     
     //工具栏
-    private var toolView: WebToolView!
+    fileprivate var toolView: WebToolView!
     
     //添加webview的地方
-    @IBOutlet private var placeHolderView: UIView!
+    @IBOutlet fileprivate var placeHolderView: UIView!
     
     //webview
-    private var mwebview: WKWebView!
+    fileprivate var mwebview: WKWebView!
     //delegate
-    private var webDelegate: WebViewDeleClass!
+    fileprivate var webDelegate: WebViewDeleClass!
     //useragent
-    private var webDefaultUserAgent: String?
+    fileprivate var webDefaultUserAgent: String?
     //这个字段用来ViewWillAppear 控制是否需要刷新页面
-    private var shouldRefresh: Bool = false
+    fileprivate var shouldRefresh: Bool = false
     
-    private var sharePicUrl: String?//分享图片
-    private var shareTitle: String?//分享title
-    private var shareDesc: String?//分享desc
-    private var shareUrl: String?//分享url
+    fileprivate var sharePicUrl: String?//分享图片
+    fileprivate var shareTitle: String?//分享title
+    fileprivate var shareDesc: String?//分享desc
+    fileprivate var shareUrl: String?//分享url
     
     //进度条
-    @IBOutlet private weak var mprogressView: UIProgressView!
+    @IBOutlet fileprivate weak var mprogressView: UIProgressView!
     
     //加载gif相关
-    @IBOutlet private weak var loadGifView: UIView!
-    @IBOutlet private weak var gifImgView: UIImageView!
-    @IBOutlet private weak var gifNotiLabel: UILabel!
+    @IBOutlet fileprivate weak var loadGifView: UIView!
+    @IBOutlet fileprivate weak var gifImgView: UIImageView!
+    @IBOutlet fileprivate weak var gifNotiLabel: UILabel!
     
     //加载动画timer
-    private var loadGifTimer: NSTimer?
+    fileprivate var loadGifTimer: Timer?
     
     deinit {
         loadGifTimer?.invalidate()
         loadGifTimer = nil
         
-        NSUserDefaults.standardUserDefaults().stopSpoofingUserAgent()
+        UserDefaults.standard.stopSpoofingUserAgent()
         
-        mwebview.loadRequest(NSURLRequest(URL: NSURL(string: "about:blank")!))
+        mwebview.load(URLRequest(url: URL(string: "about:blank")!))
         
-        mwebview.configuration.userContentController.removeScriptMessageHandlerForName("WebCallUserLogin")
-        mwebview.configuration.userContentController.removeScriptMessageHandlerForName("ShareActivity")
-        mwebview.configuration.userContentController.removeScriptMessageHandlerForName("doLinkOnClick")
+        mwebview.configuration.userContentController.removeScriptMessageHandler(forName: "WebCallUserLogin")
+        mwebview.configuration.userContentController.removeScriptMessageHandler(forName: "ShareActivity")
+        mwebview.configuration.userContentController.removeScriptMessageHandler(forName: "doLinkOnClick")
         
         mwebview.removeObserver(self, forKeyPath: "estimatedProgress")
         
@@ -62,7 +62,7 @@ class BaseWebViewController: BaseViewController {
         webDelegate.controller = nil
         webDelegate.webview = nil
         
-        mwebview.UIDelegate = nil
+        mwebview.uiDelegate = nil
         mwebview.scrollView.delegate = nil
         mwebview.navigationDelegate = nil
         mwebview.removeFromSuperview()
@@ -78,43 +78,43 @@ class BaseWebViewController: BaseViewController {
         
         //通用ua获取
         let webview = UIWebView()
-        webDefaultUserAgent = webview.stringByEvaluatingJavaScriptFromString("navigator.userAgent")
+        webDefaultUserAgent = webview.stringByEvaluatingJavaScript(from: "navigator.userAgent")
         
         shareUrl = url?.absoluteString
         
         loadWeb()
     }
     
-    private func addToolView() {
+    fileprivate func addToolView() {
         
-        toolView = WebToolView(frame: CGRect(x: 0, y: G.SCREEN_HEIGHT - 55 - 64, width: G.SCREEN_WIDTH, height: 55))
-        toolView.backButton.addTarget(self, action: #selector(backToUpLevel), forControlEvents: .TouchUpInside)
-        toolView.lastButton.addTarget(self, action: #selector(goBack), forControlEvents: .TouchUpInside)
-        toolView.nextButton.addTarget(self, action: #selector(goForward), forControlEvents: .TouchUpInside)
-        toolView.refreshButton.addTarget(self, action: #selector(reload), forControlEvents: .TouchUpInside)
-        toolView.shareButton.addTarget(self, action: #selector(showShareView), forControlEvents: .TouchUpInside)
+        toolView = WebToolView(frame: CGRect(x: 0, y: G.SCREEN_HEIGHT - 55, width: G.SCREEN_WIDTH, height: 55))
+        toolView.backButton.addTarget(self, action: #selector(backToUpLevel), for: .touchUpInside)
+        toolView.lastButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        toolView.nextButton.addTarget(self, action: #selector(goForward), for: .touchUpInside)
+        toolView.refreshButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
+        toolView.shareButton.addTarget(self, action: #selector(showShareView), for: .touchUpInside)
         
         view.insertSubview(toolView, aboveSubview: placeHolderView)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         mprogressView.progress = 0.0
-        mwebview.loadRequest(NSURLRequest(URL: NSURL(string: "about:blank")!))
+        mwebview.load(URLRequest(url: URL(string: "about:blank")!))
         
         shouldRefresh = true
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSUserDefaults.standardUserDefaults().stopSpoofingUserAgent()
+        UserDefaults.standard.stopSpoofingUserAgent()
         
         shouldRefresh = false
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if shouldRefresh {
@@ -124,7 +124,7 @@ class BaseWebViewController: BaseViewController {
             shouldRefresh = false
         }
         
-        edgesForExtendedLayout = .None
+        edgesForExtendedLayout = []
     }
     
     
@@ -161,21 +161,21 @@ extension BaseWebViewController {
     //MARK: -- 刷新工具栏状态
     func updateBottomButtons() {
         //上一页
-        toolView.lastButton.enabled = mwebview.canGoBack
-        toolView.lastButton.setImage(UIImage(named:mwebview.canGoBack ? "v1_web_last_yes" : "v1_web_last_no"), forState:.Normal)
+        toolView.lastButton.isEnabled = mwebview.canGoBack
+        toolView.lastButton.setImage(UIImage(named:mwebview.canGoBack ? "v1_web_last_yes" : "v1_web_last_no"), for:.normal)
         
         //下一页
-        toolView.nextButton.enabled = mwebview.canGoForward
-        toolView.nextButton.setImage(UIImage(named: mwebview.canGoForward ? "v1_web_next_yes" : "v1_web_next_no"), forState:.Normal)
+        toolView.nextButton.isEnabled = mwebview.canGoForward
+        toolView.nextButton.setImage(UIImage(named: mwebview.canGoForward ? "v1_web_next_yes" : "v1_web_next_no"), for:.normal)
         
-        toolView.refreshButton.setImage(UIImage(named: mwebview.loading ? "v1_web_stop" : "v1_web_refresh"), forState:.Normal)
+        toolView.refreshButton.setImage(UIImage(named: mwebview.isLoading ? "v1_web_stop" : "v1_web_refresh"), for:.normal)
         
-        if mwebview.loading {
-            toolView.refreshButton.removeTarget(self, action: #selector(reload), forControlEvents: .TouchUpInside)
-            toolView.refreshButton.addTarget(self, action: #selector(stopLoading), forControlEvents: .TouchUpInside)
+        if mwebview.isLoading {
+            toolView.refreshButton.removeTarget(self, action: #selector(reload), for: .touchUpInside)
+            toolView.refreshButton.addTarget(self, action: #selector(stopLoading), for: .touchUpInside)
         } else {
-            toolView.refreshButton.removeTarget(self, action: #selector(stopLoading), forControlEvents: .TouchUpInside)
-            toolView.refreshButton.addTarget(self, action: #selector(reload), forControlEvents: .TouchUpInside)
+            toolView.refreshButton.removeTarget(self, action: #selector(stopLoading), for: .touchUpInside)
+            toolView.refreshButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
         }
     }
     
@@ -187,19 +187,19 @@ extension BaseWebViewController {
 //MARK: - web 相关
 extension BaseWebViewController {
     
-    private func load404Web() {
+    fileprivate func load404Web() {
         webviewConfig()
         
-        let htmlPath = NSBundle.mainBundle().pathForResource("404", ofType: "html")
-        let htmlContent = try! String(contentsOfFile: htmlPath!, encoding: NSUTF8StringEncoding)
-        mwebview!.loadHTMLString(htmlContent ?? "", baseURL: nil)
+        let htmlPath = Bundle.main.path(forResource: "404", ofType: "html")
+        let htmlContent = try! String(contentsOfFile: htmlPath!, encoding: String.Encoding.utf8)
+        mwebview!.loadHTMLString(htmlContent, baseURL: nil)
     }
     
-    private func loadWeb() {
+    fileprivate func loadWeb() {
         
-        let urlStr = WebViewDeleClass.configUrl(url: url?.absoluteString)!
+        let urlStr = WebViewDeleClass.configUrl(url?.absoluteString)!
         
-        guard let urlToLoad = NSURL(string: urlStr) else {
+        guard let urlToLoad = URL(string: urlStr) else {
             G.showMessage("链接不可用")
             return
         }
@@ -208,17 +208,17 @@ extension BaseWebViewController {
         
         startLoadGif()
         
-        WebViewDeleClass.configIOS8UserAgentWithUrl(urlToLoad, userAgent: webDefaultUserAgent ?? "")
+        WebViewDeleClass.configIOS8UserAgent(url: urlToLoad, userAgent: webDefaultUserAgent ?? "")
         
         webviewConfig()
         
-        WebViewDeleClass.configIOS9UA(self.mwebview!, url: urlToLoad, userAgent: webDefaultUserAgent ?? "")
+        WebViewDeleClass.configIOS9UA(webview: self.mwebview!, url: urlToLoad, userAgent: webDefaultUserAgent ?? "")
         
-        let curRequest = WebViewDeleClass.getRequestWithUrl(urlToLoad)
-        self.mwebview.loadRequest(curRequest)
+        let curRequest = WebViewDeleClass.request(url: urlToLoad)
+        self.mwebview.load(curRequest)
     }
     
-    private func webviewConfig() {
+    fileprivate func webviewConfig() {
         if mwebview == nil {
             webDelegate = WebViewDeleClass()
             webDelegate!.controller = self
@@ -226,49 +226,58 @@ extension BaseWebViewController {
             webDelegate!.webDefaultUserAgent = webDefaultUserAgent ?? ""
             webDelegate!.canOpenAnotherView = false
             
-            mwebview = WebViewDeleClass.getWebViewWithFrame(CGRectMake(0, 0, G.SCREEN_WIDTH, G.SCREEN_HEIGHT - 55 - 64), webDelegate: webDelegate!)
+            mwebview = WebViewDeleClass.webView(frame: CGRect(x: 0, y: 0, width: G.SCREEN_WIDTH, height: G.SCREEN_HEIGHT - 55 - 64), webDelegate: webDelegate!)
             placeHolderView.addSubview(mwebview!)
             
-            mprogressView.hidden = false
-            mprogressView.trackTintColor = UIColor.clearColor()
+            mprogressView.isHidden = false
+            mprogressView.trackTintColor = UIColor.clear
             mprogressView.progressTintColor = UIColor(hex:0xFD6534)
-            mwebview!.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+            
+            mwebview!.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         }
     }
 }
 
 //MARK: - WEB DELEGATE
-extension BaseWebViewController: RHCTWebViewDelegate {
-    func web(webview: WKWebView, didStartProvisionalNavigation navigation: WKNavigation?) {
+extension BaseWebViewController: WebViewDelegate {
+    
+    func web(_ webview: WKWebView, didStartProvisionalNavigation navigation:WKNavigation?) {
         updateBottomButtons()
     }
     
-    func web(webview: WKWebView, didFinishNavigation navigation: WKNavigation?) {
+    func web(_ webview: WKWebView, didFinish navigation:WKNavigation?) {
         stopLoadGif()
         updateBottomButtons()
     }
     
-    func web(webview: WKWebView, didFailNavigation navigation: WKNavigation?, withError error: NSError) {
+    func web(_ webview: WKWebView, didFail navigation: WKNavigation?, withError error: Error) {
         stopLoadGif()
         
-        if error.domain == "NSURLErrorDomain" && error.code != NSURLErrorCancelled {
+        let err = error as NSError
+        if err.domain == "NSURLErrorDomain" && err.code != NSURLErrorCancelled {
             
         }
         
-        if webview.URL?.absoluteString == url?.absoluteString && error.code != NSURLErrorCancelled {
+        if webview.url?.absoluteString == url?.absoluteString && err.code != NSURLErrorCancelled {
             
         }
+        
         updateBottomButtons()
+    }
+    
+    //调起登录页面
+    func toLoginViewcontroller() -> Void {
+        
     }
 }
 
 //MARK: - 加载动画
 extension BaseWebViewController {
     //开始动画
-    private func startLoadGif() {
+    fileprivate func startLoadGif() {
         stopLoadGif()
         
-        loadGifView.hidden = false
+        loadGifView.isHidden = false
         
         var array: [UIImage] = []
         for i in 1 ... 32 {
@@ -279,12 +288,12 @@ extension BaseWebViewController {
         gifImgView.animationDuration = Double(array.count) * 0.1
         gifImgView.startAnimating()
         
-        loadGifTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(stopLoadGif), userInfo: nil, repeats: false)
+        loadGifTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(stopLoadGif), userInfo: nil, repeats: false)
     }
     
     //结束动画
     func stopLoadGif() {
-        if let timer = loadGifTimer where timer.valid {
+        if let timer = loadGifTimer, timer.isValid {
             timer.invalidate()
         }
         
@@ -292,44 +301,22 @@ extension BaseWebViewController {
         
         gifImgView.stopAnimating()
         gifImgView.animationImages = nil
-        loadGifView.hidden = true
-    }
-}
-
-extension BaseWebViewController {
-    func scrollToTop() {
-        if mwebview.subviews.count > 0 {
-            let scroll = mwebview.subviews[0]
-            guard let cls = NSClassFromString("WKScrollView") else {
-                return
-            }
-            if cls.isSubclassOfClass(UIScrollView) {
-                if let scrollview = scroll as? UIScrollView {
-                    scrollview.setContentOffset(CGPointMake(0, 0), animated: true)
-                }
-            }
-        }
+        loadGifView.isHidden = true
     }
 }
 
 //MARK: - 进度条处理
 extension BaseWebViewController {
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        
-        guard let web = object as? WKWebView where web == mwebview else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-            return;
-        }
-        
-        guard let path = keyPath where path == "estimatedProgress" else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let web = object as? WKWebView,  web == mwebview, let path = keyPath, path == "estimatedProgress" else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
             return
         }
         
         updateProgressBar(mwebview.estimatedProgress)
     }
     
-    func updateProgressBar(value: Double?) {
+    func updateProgressBar(_ value: Double?) {
         guard let progress = value else {
             return
         }
@@ -337,12 +324,12 @@ extension BaseWebViewController {
         if progress == 1.0 {
             mprogressView.setProgress(Float(progress), animated: true)
             
-            UIView.animateWithDuration(1.5, animations: {
+            UIView.animate(withDuration: 1.5, animations: {
                 self.mprogressView.alpha = 0.0
-                }, completion: { (finished) in
-                    if finished {
-                        self.mprogressView.setProgress(Float(0.0), animated: false)
-                    }
+            }, completion: { (finished) in
+                if finished {
+                    self.mprogressView.setProgress(Float(0.0), animated: false)
+                }
             })
         } else {
             if mprogressView.alpha < 1.0 {

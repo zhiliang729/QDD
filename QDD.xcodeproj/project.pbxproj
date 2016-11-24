@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5B9365272A8C401355181707 /* Pods_QDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7956D7A3A4049C3FA3201977 /* Pods_QDD.framework */; };
+		7018C9DE1DE684930043E2E1 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018C9D71DE684930043E2E1 /* BaseWebViewController.swift */; };
+		7018C9DF1DE684930043E2E1 /* BaseWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7018C9D81DE684930043E2E1 /* BaseWebViewController.xib */; };
+		7018C9E01DE684930043E2E1 /* 404.html in Resources */ = {isa = PBXBuildFile; fileRef = 7018C9DA1DE684930043E2E1 /* 404.html */; };
+		7018C9E11DE684930043E2E1 /* WebToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018C9DB1DE684930043E2E1 /* WebToolView.swift */; };
+		7018C9E21DE684930043E2E1 /* WebToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7018C9DC1DE684930043E2E1 /* WebToolView.xib */; };
+		7018C9E31DE684930043E2E1 /* WebViewDeleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018C9DD1DE684930043E2E1 /* WebViewDeleClass.swift */; };
+		7018C9E71DE687210043E2E1 /* UserDefaults_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018C9E61DE687210043E2E1 /* UserDefaults_Ext.swift */; };
+		7018C9E91DE6959E0043E2E1 /* UIColor_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018C9E81DE6959E0043E2E1 /* UIColor_Ext.swift */; };
 		70CED6881DE54C4000FB463A /* RemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CED6871DE54C4000FB463A /* RemindView.swift */; };
 		70CED68B1DE54F3200FB463A /* Notification_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CED68A1DE54F3200FB463A /* Notification_Ext.swift */; };
 		70CED68F1DE56DFC00FB463A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CED68E1DE56DFC00FB463A /* BaseViewController.swift */; };
@@ -38,6 +46,14 @@
 
 /* Begin PBXFileReference section */
 		23E471109EE22BE2B529D507 /* Pods-QDD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.debug.xcconfig"; sourceTree = "<group>"; };
+		7018C9D71DE684930043E2E1 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
+		7018C9D81DE684930043E2E1 /* BaseWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseWebViewController.xib; sourceTree = "<group>"; };
+		7018C9DA1DE684930043E2E1 /* 404.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 404.html; sourceTree = "<group>"; };
+		7018C9DB1DE684930043E2E1 /* WebToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebToolView.swift; sourceTree = "<group>"; };
+		7018C9DC1DE684930043E2E1 /* WebToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebToolView.xib; sourceTree = "<group>"; };
+		7018C9DD1DE684930043E2E1 /* WebViewDeleClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewDeleClass.swift; sourceTree = "<group>"; };
+		7018C9E61DE687210043E2E1 /* UserDefaults_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults_Ext.swift; sourceTree = "<group>"; };
+		7018C9E81DE6959E0043E2E1 /* UIColor_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Ext.swift; sourceTree = "<group>"; };
 		70CED6871DE54C4000FB463A /* RemindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindView.swift; sourceTree = "<group>"; };
 		70CED68A1DE54F3200FB463A /* Notification_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification_Ext.swift; sourceTree = "<group>"; };
 		70CED68E1DE56DFC00FB463A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +102,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7018C9D61DE684930043E2E1 /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				7018C9D71DE684930043E2E1 /* BaseWebViewController.swift */,
+				7018C9D81DE684930043E2E1 /* BaseWebViewController.xib */,
+				7018C9D91DE684930043E2E1 /* NotFoundHtml */,
+				7018C9DB1DE684930043E2E1 /* WebToolView.swift */,
+				7018C9DC1DE684930043E2E1 /* WebToolView.xib */,
+				7018C9DD1DE684930043E2E1 /* WebViewDeleClass.swift */,
+			);
+			path = webView;
+			sourceTree = "<group>";
+		};
+		7018C9D91DE684930043E2E1 /* NotFoundHtml */ = {
+			isa = PBXGroup;
+			children = (
+				7018C9DA1DE684930043E2E1 /* 404.html */,
+			);
+			path = NotFoundHtml;
+			sourceTree = "<group>";
+		};
 		70CED6861DE54C2F00FB463A /* remindview */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +168,7 @@
 		70DF1AA41DE542D3009DC176 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7018C9D61DE684930043E2E1 /* webView */,
 				70CED6941DE5719B00FB463A /* platformview */,
 				70CED6861DE54C2F00FB463A /* remindview */,
 				70DF1AA51DE542D3009DC176 /* extension */,
@@ -144,6 +182,8 @@
 				70DF1AA61DE542E5009DC176 /* NSDate_Ext.swift */,
 				70CED68A1DE54F3200FB463A /* Notification_Ext.swift */,
 				70CED6991DE574E700FB463A /* String_Ext.swift */,
+				7018C9E61DE687210043E2E1 /* UserDefaults_Ext.swift */,
+				7018C9E81DE6959E0043E2E1 /* UIColor_Ext.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -349,11 +389,14 @@
 				70CED6981DE571AC00FB463A /* PlatformChangeView.xib in Resources */,
 				70F4FD2D1DE57B2B00F3D218 /* SecondViewController.xib in Resources */,
 				70F4FD351DE57B4400F3D218 /* MineViewController.xib in Resources */,
+				7018C9E01DE684930043E2E1 /* 404.html in Resources */,
 				70F4FD311DE57B3800F3D218 /* ThirdViewController.xib in Resources */,
 				70F4FD291DE57B1A00F3D218 /* FirstViewController.xib in Resources */,
+				7018C9DF1DE684930043E2E1 /* BaseWebViewController.xib in Resources */,
 				70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */,
 				70EFF0411DE4510600D1179A /* Main.storyboard in Resources */,
 				70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */,
+				7018C9E21DE684930043E2E1 /* WebToolView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,14 +455,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7018C9DE1DE684930043E2E1 /* BaseWebViewController.swift in Sources */,
 				70CED69A1DE574E700FB463A /* String_Ext.swift in Sources */,
 				70CED68B1DE54F3200FB463A /* Notification_Ext.swift in Sources */,
 				70CED6971DE571AC00FB463A /* PlatformChangeView.swift in Sources */,
 				70F4FD2C1DE57B2B00F3D218 /* SecondViewController.swift in Sources */,
 				70DF1AA01DE5320E009DC176 /* User.swift in Sources */,
+				7018C9E31DE684930043E2E1 /* WebViewDeleClass.swift in Sources */,
 				70CED6911DE56EF600FB463A /* BaseTabItemViewController.swift in Sources */,
 				70DF1A9C1DE530F2009DC176 /* G.swift in Sources */,
 				70DF1A9A1DE52EA5009DC176 /* ViewController.swift in Sources */,
+				7018C9E71DE687210043E2E1 /* UserDefaults_Ext.swift in Sources */,
 				70DF1AA21DE540DF009DC176 /* G_Ext.swift in Sources */,
 				70CED68F1DE56DFC00FB463A /* BaseViewController.swift in Sources */,
 				70CED6881DE54C4000FB463A /* RemindView.swift in Sources */,
@@ -429,6 +475,8 @@
 				70DF1A981DE52E8E009DC176 /* AppDelegate.swift in Sources */,
 				70F4FD301DE57B3800F3D218 /* ThirdViewController.swift in Sources */,
 				70F4FD281DE57B1A00F3D218 /* FirstViewController.swift in Sources */,
+				7018C9E11DE684930043E2E1 /* WebToolView.swift in Sources */,
+				7018C9E91DE6959E0043E2E1 /* UIColor_Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

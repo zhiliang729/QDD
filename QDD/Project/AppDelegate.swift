@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    private func appVersionConfig() {
+    fileprivate func appVersionConfig() {
         let versionStr = G.appVersion
         let version = versionStr.version()
         
@@ -115,12 +115,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //MARK: - window设置
-    private func configWindow() {
+    fileprivate func configWindow() {
         window?.backgroundColor = UIColor.white
     }
     
     //MARK: - tabbar设置
-    private func configTabbar() {
+    fileprivate func configTabbar() {
         
         mainTabBar.delegate = mainDelegate
         mainTabBar.tabBar.backgroundColor = UIColor.white

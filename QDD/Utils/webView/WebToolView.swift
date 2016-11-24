@@ -23,7 +23,7 @@ class WebToolView: UIView {
     //分享
     @IBOutlet var shareButton: UIButton!
 
-    @IBOutlet private var view: UIView!
+    @IBOutlet fileprivate var view: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,8 +34,8 @@ class WebToolView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUp() {
-        NSBundle.mainBundle().loadNibNamed("WebToolView", owner: self, options: nil)
+    fileprivate func setUp() {
+        Bundle.main.loadNibNamed("WebToolView", owner: self, options: nil)
         self.view.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 55)
         addSubview(self.view)
     }

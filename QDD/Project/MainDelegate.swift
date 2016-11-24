@@ -10,7 +10,7 @@ import UIKit
 
 class MainDelegate: NSObject {
     
-    private var naviArray: [UINavigationController] = []
+    fileprivate var naviArray: [UINavigationController] = []
 
     //MARK: - 当前NavigationController
     var curNavController: UINavigationController? {
@@ -37,11 +37,11 @@ class MainDelegate: NSObject {
     }
     
     //MARK: - 推出web页面
-    func handleUrl(_ url: NSURL?) {
+    func handleUrl(_ url: URL?) {
         if let handleUrl = url {
-//            let web = BaseWebViewController(nibName: "BaseWebViewController", bundle: nil)
-//            web.url = handleUrl
-//            pushViewController(web)
+            let web = BaseWebViewController(nibName: "BaseWebViewController", bundle: nil)
+            web.url = handleUrl
+            push(web)
         }
     }
     

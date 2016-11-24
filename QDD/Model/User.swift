@@ -31,15 +31,15 @@ public class User: NSCoding {
     static let EncodeKey = "userinfo"
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
-    private let kUserAccountFromKey: String = "account_from"
-    private let kUserLocationKey: String = "location"
-    private let kUserInternalIdentifierKey: String = "id"
-    private let kUserAvatarKey: String = "avatar"
-    private let kUserMobileNumKey: String = "mobile_num"
-    private let kUserDescriptionValueKey: String = "description"
-    private let kUserBirthdayKey: String = "birthday"
-    private let kUserUsernameKey: String = "username"
-    private let kUserSexKey: String = "sex"
+    fileprivate let kUserAccountFromKey: String = "account_from"
+    fileprivate let kUserLocationKey: String = "location"
+    fileprivate let kUserInternalIdentifierKey: String = "id"
+    fileprivate let kUserAvatarKey: String = "avatar"
+    fileprivate let kUserMobileNumKey: String = "mobile_num"
+    fileprivate let kUserDescriptionValueKey: String = "description"
+    fileprivate let kUserBirthdayKey: String = "birthday"
+    fileprivate let kUserUsernameKey: String = "username"
+    fileprivate let kUserSexKey: String = "sex"
     
     
     // MARK: -- Properties

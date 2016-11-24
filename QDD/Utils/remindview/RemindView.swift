@@ -15,9 +15,9 @@ class PrivateRemindView: UIView {
     static let ViewWidth = 120.0
     static let LabelHeight = 30.0
     
-    private var remindLabel: UILabel!
+    fileprivate var remindLabel: UILabel!
     
-    private var _innerMsg: String?
+    fileprivate var _innerMsg: String?
     var curMsg: String? {
         set {
             _innerMsg = newValue
@@ -77,11 +77,11 @@ class RemindView: NSObject {
     
     static let shared = RemindView()
     
-    //MARK: - private
-    private var remindView: PrivateRemindView!
-    private var timer: Timer?
+    //MARK: - fileprivate
+    fileprivate var remindView: PrivateRemindView!
+    fileprivate var timer: Timer?
     
-    private override init() {
+    fileprivate override init() {
         remindView = PrivateRemindView(frame: CGRect.zero)
         remindView.isHidden = true
         let window = UIApplication.shared.windows[0]

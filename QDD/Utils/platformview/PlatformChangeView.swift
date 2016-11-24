@@ -32,7 +32,7 @@ class PlatformChangeView: UIView, UITextViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configData() {
+    fileprivate func configData() {
         textView.text = String(format: "UserAgent:\(G.globalUserAgent())\n测试web js: http://zhiliang729.github.io/testLogin.html\nUserInfo:\(G.shared.user?.dictionaryRepresentation().description)\n")
         
         if G.platformBaseUrl == G.DevAPIBaseURL {
@@ -75,7 +75,7 @@ class PlatformChangeView: UIView, UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-        G.appdelegate.mainDelegate.handleUrl(URL as NSURL?)
+        G.appdelegate.mainDelegate.handleUrl(URL)
         disappear()
         return false
     }

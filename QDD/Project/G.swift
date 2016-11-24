@@ -35,9 +35,9 @@ class G {
     //MARK: -- 是否已显示过帮助页
     var finishedStartHelp: Bool = false
     
-    //MARK: - private
+    //MARK: - fileprivate
     //MARK: -- 复写init方法
-    private init() {
+    fileprivate init() {
     }
 }
 

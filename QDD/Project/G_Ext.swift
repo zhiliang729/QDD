@@ -244,7 +244,7 @@ extension G {
     }
     
     //MARK: -- 推出web页面
-    class func handleUrl(_ url: NSURL?) {
+    class func handleUrl(_ url: URL?) {
         G.appdelegate.mainDelegate.handleUrl(url)
     }
     
