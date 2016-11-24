@@ -43,7 +43,7 @@
                     </constraints>
                     <state key="normal" title="切换到dev平台"/>
                     <connections>
-                        <action selector="toChangePlatform:" destination="-1" eventType="touchUpInside" id="TKe-z9-7GQ"/>
+                        <action selector="toChangePlatformWithButton:" destination="-1" eventType="touchUpInside" id="kVh-K5-fFm"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点此消失，或手势放大消失" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tYI-VI-cnQ">
@@ -69,7 +69,7 @@
                     <rect key="frame" x="182" y="240" width="183" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <action selector="hidenSelf:" destination="-1" eventType="touchUpInside" id="D7d-N1-NKj"/>
+                        <action selector="hidenSelfWithButton:" destination="-1" eventType="touchUpInside" id="fgP-Op-DNF"/>
                     </connections>
                 </button>
             </subviews>
