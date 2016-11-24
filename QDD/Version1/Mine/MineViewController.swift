@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineViewController: BaseViewController {
+class MineViewController: BaseTabItemViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

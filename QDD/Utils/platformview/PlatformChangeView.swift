@@ -59,7 +59,7 @@ class PlatformChangeView: UIView, UITextViewDelegate {
             G.appdelegate.platformConfig(platform: G.UserDefaultKey.appDevPlatform.rawValue)
         }
         
-        NotificationCenter.default.post(name: Notification.Name.User.platformChanged, object: nil)
+        NotificationCenter.default.post(name: Notification.Name.App.PlatformChanged, object: nil)
         disappear()
     }
     

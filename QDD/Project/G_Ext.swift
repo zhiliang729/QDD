@@ -236,38 +236,38 @@ extension G {
     }
 }
 
-////MARK: - MainDelegate 直接调用
-//extension G {
-//    //MARK: -- 推出登录页
-//    class func pushLoginViewController() {
-//        G.appdelegate.mainDelegate.pushLoginViewController()
-//    }
-//    
-//    //MARK: -- 推出web页面
-//    class func handleUrl(url: NSURL?) {
-//        G.appdelegate.mainDelegate.handleUrl(url)
-//    }
-//    
-//    //MARK: -- 处理推送
-//    class func handleRemotePush() {
-//        G.appdelegate.mainDelegate.handleRemotePush()
-//    }
-//    
-//    //MARK: -- 若未登陆，执行登录，否则执行action
-//    class func loginOrPerformAction(action: () -> Void) {
-//        G.appdelegate.mainDelegate.loginOrPerformAction(action)
-//    }
-//    
-//    //MARK: -- 若未登陆，执行noLoginAction，否则执行alreadyLoginAction
-//    class func ifLogin(performAction alreadyLoginAction: (() -> Void)?, elsePerformAction noLoginAction: (() -> Void)? ) {
-//        G.appdelegate.mainDelegate.ifLogin(performAction: alreadyLoginAction, elsePerformAction: noLoginAction)
-//    }
-//    
-//    //MARK: -- 推出vc页面
-//    class func pushViewController(vc: UIViewController) {
-//        G.appdelegate.mainDelegate.pushViewController(vc)
-//    }
-//}
+//MARK: - MainDelegate 直接调用
+extension G {
+    //MARK: -- 推出登录页
+    class func pushLoginViewController() {
+        G.appdelegate.mainDelegate.pushLoginViewController()
+    }
+    
+    //MARK: -- 推出web页面
+    class func handleUrl(_ url: NSURL?) {
+        G.appdelegate.mainDelegate.handleUrl(url)
+    }
+    
+    //MARK: -- 处理推送
+    class func handleRemotePush() {
+        G.appdelegate.mainDelegate.handleRemotePush()
+    }
+    
+    //MARK: -- 若未登陆，执行登录，否则执行action
+    class func loginOrPerformAction(_ action: @escaping () -> Void) {
+        G.appdelegate.mainDelegate.loginOrPerformAction(action)
+    }
+    
+    //MARK: -- 若未登陆，执行noLoginAction，否则执行alreadyLoginAction
+    class func ifLogin(performAction alreadyLoginAction: (() -> Void)?, elsePerformAction noLoginAction: (() -> Void)? ) {
+        G.appdelegate.mainDelegate.ifLogin(performAction: alreadyLoginAction, elsePerformAction: noLoginAction)
+    }
+    
+    //MARK: -- 推出vc页面
+    class func push(_ vc: UIViewController) {
+        G.appdelegate.mainDelegate.push(vc)
+    }
+}
 
 // MARK: - 一些常用方法
 extension G {

@@ -161,7 +161,7 @@ public class User: NSCoding {
         UserDefaults.standard.synchronize()
         
         //发送退出登录消息
-        NotificationCenter.default.post(name: NSNotification.Name.User.didLogout, object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name.User.DidLogout, object: nil)
     }
     
     //MARK: -- 配置当前用户信息 (只在启动时调用，只调用一次)

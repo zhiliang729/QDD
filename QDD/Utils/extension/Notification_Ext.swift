@@ -10,12 +10,14 @@ import Foundation
 
 extension Notification.Name {
     public struct User {
-        public static let didLogin = Notification.Name(rawValue: "rhct.notification.name.user.LoginSuccess")
+        public static let DidLogin = Notification.Name(rawValue: "rhct.notification.name.user.LoginSuccess")
         
-        public static let didLogout = Notification.Name(rawValue: "rhct.notification.name.user.LogoutSuccess")
+        public static let DidLogout = Notification.Name(rawValue: "rhct.notification.name.user.LogoutSuccess")
+    }
+    
+    public struct App {
+        public static let PlatformChanged = Notification.Name(rawValue: "rhct.notification.name.app.platformChanged")
         
-        public static let platformChanged = Notification.Name(rawValue: "rhct.notification.name.user.platformChanged")
-        
-        public static let alreadyShowHomePage = Notification.Name(rawValue: "rhct.notification.name.user.alreadyShowHomePage")
+        public static let AlreadyShowHomePage = Notification.Name(rawValue: "rhct.notification.name.app.alreadyShowHomePage")
     }
 }

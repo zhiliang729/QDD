@@ -24,7 +24,6 @@
 		70DF1AA71DE542E5009DC176 /* NSDate_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1AA61DE542E5009DC176 /* NSDate_Ext.swift */; };
 		70EFF01D1DE44E3D00D1179A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFF01C1DE44E3D00D1179A /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0291DE4504000D1179A /* Assets.xcassets */; };
-		70EFF03F1DE4504000D1179A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF0361DE4504000D1179A /* Info.plist */; };
 		70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF02B1DE4504000D1179A /* LaunchScreen.storyboard */; };
 		70EFF0411DE4510600D1179A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EFF02D1DE4504000D1179A /* Main.storyboard */; };
 		70F4FD281DE57B1A00F3D218 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4FD261DE57B1A00F3D218 /* FirstViewController.swift */; };
@@ -354,7 +353,6 @@
 				70F4FD291DE57B1A00F3D218 /* FirstViewController.xib in Resources */,
 				70EFF0401DE4510600D1179A /* LaunchScreen.storyboard in Resources */,
 				70EFF0411DE4510600D1179A /* Main.storyboard in Resources */,
-				70EFF03F1DE4504000D1179A /* Info.plist in Resources */,
 				70EFF0381DE4504000D1179A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

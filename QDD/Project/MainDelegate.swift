@@ -53,7 +53,7 @@ class MainDelegate: NSObject {
     }
     
     //MARK: - 若未登陆，执行登录，否则执行action
-    func loginOrPerformAction(action: @escaping () -> Void) {
+    func loginOrPerformAction(_ action: @escaping () -> Void) {
         ifLogin(performAction: {
             action()
         }) {
@@ -71,7 +71,7 @@ class MainDelegate: NSObject {
     }
     
     //MARK: - push viewcontroller 建议所有push都用此方法
-    func pushViewController(vc: UIViewController) {
+    func push(_ vc: UIViewController) {
         
         vc.hidesBottomBarWhenPushed = true
         curNavController?.pushViewController(vc, animated: true)

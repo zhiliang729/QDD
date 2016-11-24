@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //MARK: -- 手势捏合切换平台 （非APPSTORE 有效）
         #if APPSTORE
         #else
-            NotificationCenter.default.addObserver(self, selector: #selector(platformChange(_:)), name: Notification.Name.User.platformChanged, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(platformChange(_:)), name: Notification.Name.App.PlatformChanged, object: nil)
             addTwoFingerPinchGesture()
         #endif
         
@@ -523,7 +523,7 @@ extension AppDelegate {
         let enterAppHandler = {
             G.shared.finishedStartHelp = true
             
-            NotificationCenter.default.post(name: Notification.Name.User.alreadyShowHomePage, object: nil)
+            NotificationCenter.default.post(name: Notification.Name.App.AlreadyShowHomePage, object: nil)
             
             self.mainDelegate.handleRemotePush()
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdViewController: BaseViewController {
+class ThirdViewController: BaseTabItemViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
