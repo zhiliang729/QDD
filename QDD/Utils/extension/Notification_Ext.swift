@@ -21,3 +21,4 @@ extension Notification.Name {
         public static let AlreadyShowHomePage = Notification.Name(rawValue: "rhct.notification.name.app.alreadyShowHomePage")
     }
 }
+

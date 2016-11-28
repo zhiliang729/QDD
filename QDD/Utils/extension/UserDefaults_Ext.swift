@@ -32,3 +32,4 @@ extension UserDefaults {
         UserDefaults.standard.unregisterDefault(forKey: "UserAgent")
     }
 }
+
