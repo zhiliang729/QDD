@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class FirstViewController: BaseTabItemViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

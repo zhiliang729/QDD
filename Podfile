@@ -50,6 +50,8 @@ pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
 pod 'Alamofire', '~> 4'  #网络请求库
 pod 'AlamofireImage', '~> 3' #response Image
 
+pod 'HTTPStatusCodes' #http status codes
+
 pod 'SwiftyJSON'  #swift json parser
 #pod 'ObjectMapper', '~> 2.2' #JSON -> model
 
