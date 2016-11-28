@@ -82,3 +82,4 @@ class PlatformChangeView: UIView, UITextViewDelegate {
 }
 
 #endif
+

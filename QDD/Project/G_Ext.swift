@@ -210,8 +210,8 @@ extension G {
     //当前平台base url
     static var platformBaseUrl: String {
         #if APPSTORE
-            G.appdelegate.platformConfig(G.UserDefaultKey.appProdPlatform.rawValue)
-            return G.kProdAPIBaseURL
+            G.appdelegate.platformConfig(platform: G.UserDefaultKey.appProdPlatform.rawValue)
+            return G.ProdAPIBaseURL
         #else
             
             // 下面这样操作有效率问题，不过开发和测试还可以容忍吧

@@ -600,6 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
 				DEVELOPMENT_TEAM = 69P63E97NP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -618,6 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
 				DEVELOPMENT_TEAM = 69P63E97NP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -678,10 +680,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
 				DEVELOPMENT_TEAM = 69P63E97NP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) -D APP_STORE";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D APPSTORE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hothuati.QDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QDD/Project/QDD-Bridging-Header.h";
