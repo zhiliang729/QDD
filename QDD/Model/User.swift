@@ -133,7 +133,7 @@ public class User: NSCoding {
         }
         archiver.finishEncoding()
         
-        UserDefaults.standard.set(infoData, forKey: G.UserDefaultKey.currentUserInfo.rawValue)
+        UserDefaults.standard.set(infoData, forKey: UserDefaults.Key.CurUserInfo)
         UserDefaults.standard.synchronize()
     }
     
@@ -157,7 +157,7 @@ public class User: NSCoding {
         G.clearSysCookies()
         
         //userDefault 保存状态
-        UserDefaults.standard.set(nil, forKey: G.UserDefaultKey.currentUserInfo.rawValue)
+        UserDefaults.standard.set(nil, forKey: UserDefaults.Key.CurUserInfo)
         UserDefaults.standard.synchronize()
         
         //发送退出登录消息
@@ -166,7 +166,7 @@ public class User: NSCoding {
     
     //MARK: -- 配置当前用户信息 (只在启动时调用，只调用一次)
     class func configCurrentUserInfo() {
-        let data = UserDefaults.standard.object(forKey: G.UserDefaultKey.currentUserInfo.rawValue)
+        let data = UserDefaults.standard.object(forKey: UserDefaults.Key.CurUserInfo)
         if let userData = data as? NSData {
             let unarchiver = NSKeyedUnarchiver(forReadingWith: userData as Data)
             guard let user = unarchiver.decodeObject(forKey: EncodeKey) as? User else {

@@ -8,6 +8,24 @@
 
 import Foundation
 
+extension UserDefaults {
+    
+    public struct Key {
+        /// User info dictionary key representing the `URLSessionTask` associated with the notification.
+        public static let CurUserInfo = "rhct.userdefaults.key.curuserinfo"
+        
+        
+        public static let AppVersion = "rhct.userdefaults.key.appversion"//App 版本信息
+        
+        public static let AppPlatform = "rhct.userdefaults.key.appplatform"//App 平台信息
+        public static let AppDevPlatform = "rhct.userdefaults.key.appdevplatform"//App dev platform
+        public static let AppProdPlatform = "rhct.userdefaults.key.appprodplatform"//App prod platform
+        
+        public static let AlreadyShowStartHelp = "rhct.userdefaults.key.alreadyshowstarthelp"//是否已显示启动帮助
+        
+        public static let CloseAPNSNotification = "rhct.userdefaults.key.closeapnsnotification"//推送通知是否开启
+    }
+}
 
 extension UserDefaults {
     

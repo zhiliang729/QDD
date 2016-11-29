@@ -63,22 +63,6 @@ extension G {
         case loginOutOfDateDesc = "登录已过期，请重新登录"
         case noLoginUserDesc = "您尚未登录，请登录"
     }
-    
-    //MARK: -- NSUserDefaultKey name
-    enum UserDefaultKey: String {
-        case currentUserInfo = "CurrentUserInfoKey"//当前用户信息
-        
-        case appVersion = "AppVersionKey"//App 版本信息
-        case appBuild = "AppBuildKey"//App build信息
-        
-        case appPlatform = "AppPlatformKey"//App 平台信息
-        case appDevPlatform = "AppDevPlatform"//App dev platform
-        case appProdPlatform = "AppProdPlatform"//App prod platform
-        
-        case alreadyShowStartHelp = "AlreadyShowStartHelp"//是否已显示启动帮助
-        
-        case closeAPNSNotification = "CloseAPNSNotification"//推送通知是否开启
-    }
 }
 
 //MARK: - HTTP log 控制
@@ -165,7 +149,7 @@ extension G {
 extension G {
     class func globalUserAgent() -> String {
         //2.0.0/iOS/7.0/iPhone/Jpush registrationID/渠道/uuid
-        let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let appVersion = G.appVersion
         let sysType = "iOS"
         let sysVersion = UIDevice.current.systemVersion
         
@@ -223,17 +207,17 @@ extension G {
     //当前平台base url
     static var platformBaseUrl: String {
         #if APPSTORE
-            G.appdelegate.platformConfig(platform: G.UserDefaultKey.appProdPlatform.rawValue)
+            G.appdelegate.platformConfig(platform: UserDefaults.Key.AppProdPlatform)
             return G.ProdAPIBaseURL
         #else
             
             // 下面这样操作有效率问题，不过开发和测试还可以容忍吧
-            var savedPlatform = UserDefaults.standard.object(forKey: G.UserDefaultKey.appPlatform.rawValue) as? String
+            var savedPlatform = UserDefaults.standard.object(forKey: UserDefaults.Key.AppPlatform) as? String
             if savedPlatform == nil {
-                savedPlatform = G.UserDefaultKey.appDevPlatform.rawValue
+                savedPlatform = UserDefaults.Key.AppDevPlatform
             }
             
-            if savedPlatform == G.UserDefaultKey.appProdPlatform.rawValue {//pord
+            if savedPlatform == UserDefaults.Key.AppProdPlatform {//pord
                 return G.ProdAPIBaseURL
             } else {//dev
                 return G.DevAPIBaseURL

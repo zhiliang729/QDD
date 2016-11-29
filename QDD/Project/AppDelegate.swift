@@ -91,26 +91,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let versionStr = G.appVersion
         let version = versionStr.version()
         
-        let savedVersionStr = UserDefaults.standard.object(forKey: G.UserDefaultKey.appVersion.rawValue) as? String
+        let savedVersionStr = UserDefaults.standard.object(forKey: UserDefaults.Key.AppVersion) as? String
         
         if versionStr != savedVersionStr {//升级版本首次启动时，进行相应的数据处理
-            UserDefaults.standard.set(false, forKey: G.UserDefaultKey.closeAPNSNotification.rawValue) //默认打开推送
+            UserDefaults.standard.set(false, forKey: UserDefaults.Key.CloseAPNSNotification) //默认打开推送
             
             let savedVersion = savedVersionStr?.version()
             if savedVersionStr == nil {//首次安装
-                UserDefaults.standard.set(false, forKey: G.UserDefaultKey.alreadyShowStartHelp.rawValue)
+                UserDefaults.standard.set(false, forKey: UserDefaults.Key.AlreadyShowStartHelp)
             } else if version.major != savedVersion?.major ?? 0 {//大版本升级
-                UserDefaults.standard.set(false, forKey: G.UserDefaultKey.alreadyShowStartHelp.rawValue)
+                UserDefaults.standard.set(false, forKey: UserDefaults.Key.AlreadyShowStartHelp)
             } else {//小版本升级
                 if G.showStartHelp {//产品控制
-                    UserDefaults.standard.set(false, forKey: G.UserDefaultKey.alreadyShowStartHelp.rawValue)
+                    UserDefaults.standard.set(false, forKey: UserDefaults.Key.AlreadyShowStartHelp)
                 } else {
-                    UserDefaults.standard.set(true, forKey: G.UserDefaultKey.alreadyShowStartHelp.rawValue)
+                    UserDefaults.standard.set(true, forKey: UserDefaults.Key.AlreadyShowStartHelp)
                 }
             }
             
             //保存版本信息
-            UserDefaults.standard.set(versionStr, forKey: G.UserDefaultKey.appVersion.rawValue)
+            UserDefaults.standard.set(versionStr, forKey: UserDefaults.Key.AppVersion)
             UserDefaults.standard.synchronize()
         }
     }
@@ -231,13 +231,13 @@ extension AppDelegate {
     
     func platformConfig(platform: String) {
         var plat = platform
-        let savedPlatform = UserDefaults.standard.object(forKey: G.UserDefaultKey.appPlatform.rawValue) as? String
+        let savedPlatform = UserDefaults.standard.object(forKey: UserDefaults.Key.AppPlatform) as? String
         
         if plat.characters.count == 0 {
             #if APPSTORE
-                let value = G.UserDefaultKey.appProdPlatform.rawValue
+                let value = UserDefaults.Key.AppProdPlatform
             #else
-                let value = G.UserDefaultKey.appDevPlatform.rawValue
+                let value = UserDefaults.Key.AppDevPlatform
             #endif
             
             plat = savedPlatform ?? value
@@ -254,7 +254,7 @@ extension AppDelegate {
             User.cancelAuthorize()
         }
         
-        UserDefaults.standard.set(plat, forKey: G.UserDefaultKey.appPlatform.rawValue)
+        UserDefaults.standard.set(plat, forKey: UserDefaults.Key.AppPlatform)
         UserDefaults.standard.synchronize()
     }
     
@@ -429,7 +429,7 @@ extension AppDelegate: JPUSHRegisterDelegate {
         
         
         let advertisingId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        if !UserDefaults.standard.bool(forKey: G.UserDefaultKey.closeAPNSNotification.rawValue) {
+        if !UserDefaults.standard.bool(forKey: UserDefaults.Key.CloseAPNSNotification) {
             
             if #available(iOS 10, *) {
                 let entity = JPUSHRegisterEntity()

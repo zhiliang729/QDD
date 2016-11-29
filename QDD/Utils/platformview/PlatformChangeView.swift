@@ -54,9 +54,9 @@ class PlatformChangeView: UIView, UITextViewDelegate {
     
     @IBAction func toChangePlatform(button: UIButton) {
         if G.platformBaseUrl == G.DevAPIBaseURL {//切换到prod平台
-            G.appdelegate.platformConfig(platform: G.UserDefaultKey.appProdPlatform.rawValue)
+            G.appdelegate.platformConfig(platform: UserDefaults.Key.AppProdPlatform)
         } else {//切换到dev平台
-            G.appdelegate.platformConfig(platform: G.UserDefaultKey.appDevPlatform.rawValue)
+            G.appdelegate.platformConfig(platform: UserDefaults.Key.AppDevPlatform)
         }
         
         NotificationCenter.default.post(name: Notification.Name.App.PlatformChanged, object: nil)
