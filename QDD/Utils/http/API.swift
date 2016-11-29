@@ -64,8 +64,7 @@ enum UserAPI: APIRequestProtocol {
     func asURLRequest() throws -> URLRequest {
         let url = try UserAPI.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.httpMethod = method.rawValue
+        var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
         
         switch self {
         default:
@@ -141,8 +140,7 @@ enum AccountAPI: APIRequestProtocol {
     func asURLRequest() throws -> URLRequest {
         let url = try AccountAPI.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.httpMethod = method.rawValue
+        var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
         
         switch self {
         case .verifyCode(let paras),
@@ -211,8 +209,7 @@ enum MISCAPI: APIRequestProtocol {
     func asURLRequest() throws -> URLRequest {
         let url = try MISCAPI.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.httpMethod = method.rawValue
+        var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
         
         switch self {
         case .banner(let paras),

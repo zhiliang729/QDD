@@ -198,6 +198,19 @@ extension G {
     }
 }
 
+//MARK: - http header
+import Alamofire
+extension G {
+    class func httpHeaders() -> HTTPHeaders? {
+        let headers = [
+            "Accept-Language": "en;q=0.8,zh-Hans;q=0.5,zh-Hant;",
+            "Accept-Encoding": "gzip;q=0.8,compress;",
+            "User-Agent":G.globalUserAgent()
+        ]
+        return headers
+    }
+}
+
 //MARK: - 提示消息简单调用
 extension G {
     class func showMessage(_ msg: String?) {

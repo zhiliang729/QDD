@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		23E471109EE22BE2B529D507 /* Pods-QDD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.debug.xcconfig"; sourceTree = "<group>"; };
+		62577C228823EBDE2A8ACEAC /* Pods-QDD.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDD.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-QDD/Pods-QDD.appstore.xcconfig"; sourceTree = "<group>"; };
 		7018C9D71DE684930043E2E1 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 		7018C9D81DE684930043E2E1 /* BaseWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseWebViewController.xib; sourceTree = "<group>"; };
 		7018C9DA1DE684930043E2E1 /* 404.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 404.html; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 				23E471109EE22BE2B529D507 /* Pods-QDD.debug.xcconfig */,
 				760814D981F67584BF9B92E3 /* Pods-QDD.release.xcconfig */,
 				805602C75123C52DF7D74FA3 /* Pods-QDD.app store.xcconfig */,
+				62577C228823EBDE2A8ACEAC /* Pods-QDD.appstore.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -611,6 +613,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 69P63E97NP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
@@ -630,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 69P63E97NP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
@@ -643,7 +647,7 @@
 			};
 			name = Release;
 		};
-		70EFF0951DE4518500D1179A /* App Store */ = {
+		70EFF0951DE4518500D1179A /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -683,14 +687,15 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "App Store";
+			name = AppStore;
 		};
-		70EFF0961DE4518500D1179A /* App Store */ = {
+		70EFF0961DE4518500D1179A /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 805602C75123C52DF7D74FA3 /* Pods-QDD.app store.xcconfig */;
+			baseConfigurationReference = 62577C228823EBDE2A8ACEAC /* Pods-QDD.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "QDD/Supporting Files/QDD.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 69P63E97NP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "QDD/Supporting Files/Info.plist";
@@ -702,7 +707,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "QDD/Project/QDD-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
-			name = "App Store";
+			name = AppStore;
 		};
 /* End XCBuildConfiguration section */
 
@@ -712,7 +717,7 @@
 			buildConfigurations = (
 				70EFF0171DE3018600D1179A /* Debug */,
 				70EFF0181DE3018600D1179A /* Release */,
-				70EFF0951DE4518500D1179A /* App Store */,
+				70EFF0951DE4518500D1179A /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -722,7 +727,7 @@
 			buildConfigurations = (
 				70EFF01A1DE3018600D1179A /* Debug */,
 				70EFF01B1DE3018600D1179A /* Release */,
-				70EFF0961DE4518500D1179A /* App Store */,
+				70EFF0961DE4518500D1179A /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
