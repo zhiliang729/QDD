@@ -27,6 +27,10 @@
 		70CED6971DE571AC00FB463A /* PlatformChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CED6951DE571AC00FB463A /* PlatformChangeView.swift */; };
 		70CED6981DE571AC00FB463A /* PlatformChangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CED6961DE571AC00FB463A /* PlatformChangeView.xib */; };
 		70CED69A1DE574E700FB463A /* String_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CED6991DE574E700FB463A /* String_Ext.swift */; };
+		70CF9AF41DED8CC000E244F9 /* BaseServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9AF31DED8CC000E244F9 /* BaseServiceHandler.swift */; };
+		70CF9AF61DED8D9400E244F9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9AF51DED8D9400E244F9 /* UserService.swift */; };
+		70CF9AF81DED8EB600E244F9 /* UserServiceHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9AF71DED8EB600E244F9 /* UserServiceHandlers.swift */; };
+		70CF9AFA1DED8EDF00E244F9 /* MultiPageBaseServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9AF91DED8EDF00E244F9 /* MultiPageBaseServiceHandler.swift */; };
 		70D84D101DEC2028002F16C9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D84D0F1DEC2028002F16C9 /* API.swift */; };
 		70DF1A981DE52E8E009DC176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A971DE52E8E009DC176 /* AppDelegate.swift */; };
 		70DF1A9C1DE530F2009DC176 /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A9B1DE530F2009DC176 /* G.swift */; };
@@ -69,6 +73,10 @@
 		70CED6951DE571AC00FB463A /* PlatformChangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformChangeView.swift; sourceTree = "<group>"; };
 		70CED6961DE571AC00FB463A /* PlatformChangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlatformChangeView.xib; sourceTree = "<group>"; };
 		70CED6991DE574E700FB463A /* String_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Ext.swift; sourceTree = "<group>"; };
+		70CF9AF31DED8CC000E244F9 /* BaseServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServiceHandler.swift; sourceTree = "<group>"; };
+		70CF9AF51DED8D9400E244F9 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		70CF9AF71DED8EB600E244F9 /* UserServiceHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceHandlers.swift; sourceTree = "<group>"; };
+		70CF9AF91DED8EDF00E244F9 /* MultiPageBaseServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPageBaseServiceHandler.swift; sourceTree = "<group>"; };
 		70D84D0F1DEC2028002F16C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		70DF1A971DE52E8E009DC176 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70DF1A9B1DE530F2009DC176 /* G.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
@@ -164,6 +172,17 @@
 			path = platformview;
 			sourceTree = "<group>";
 		};
+		70CF9AF21DED8CAD00E244F9 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				70CF9AF31DED8CC000E244F9 /* BaseServiceHandler.swift */,
+				70CF9AF91DED8EDF00E244F9 /* MultiPageBaseServiceHandler.swift */,
+				70CF9AF51DED8D9400E244F9 /* UserService.swift */,
+				70CF9AF71DED8EB600E244F9 /* UserServiceHandlers.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		70D84D0E1DEC1F68002F16C9 /* http */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +204,7 @@
 		70DF1AA41DE542D3009DC176 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				70CF9AF21DED8CAD00E244F9 /* service */,
 				70D84D0E1DEC1F68002F16C9 /* http */,
 				7018C9D61DE684930043E2E1 /* webView */,
 				70CED6941DE5719B00FB463A /* platformview */,
@@ -475,12 +495,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7018C9DE1DE684930043E2E1 /* BaseWebViewController.swift in Sources */,
+				70CF9AF81DED8EB600E244F9 /* UserServiceHandlers.swift in Sources */,
 				70CED69A1DE574E700FB463A /* String_Ext.swift in Sources */,
+				70CF9AF61DED8D9400E244F9 /* UserService.swift in Sources */,
 				70C8616E1DE6CA5C00815E37 /* ShareSDK_Ext.swift in Sources */,
 				70CED68B1DE54F3200FB463A /* Notification_Ext.swift in Sources */,
 				70CED6971DE571AC00FB463A /* PlatformChangeView.swift in Sources */,
 				7092D1861DED21F1003C28C0 /* HttpRequest.swift in Sources */,
+				70CF9AFA1DED8EDF00E244F9 /* MultiPageBaseServiceHandler.swift in Sources */,
 				70F4FD2C1DE57B2B00F3D218 /* SecondViewController.swift in Sources */,
+				70CF9AF41DED8CC000E244F9 /* BaseServiceHandler.swift in Sources */,
 				70DF1AA01DE5320E009DC176 /* User.swift in Sources */,
 				7018C9E31DE684930043E2E1 /* WebViewDeleClass.swift in Sources */,
 				70CED6911DE56EF600FB463A /* BaseTabItemViewController.swift in Sources */,

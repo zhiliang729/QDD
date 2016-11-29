@@ -56,8 +56,7 @@ class FirstViewController: BaseTabItemViewController {
                     debugPrint("error: " + err.debugDescription)
                 }
                 
-                
-                
+
                 break
             }
         })

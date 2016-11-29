@@ -19,6 +19,8 @@ protocol APIRequestProtocol: URLRequestConvertible {
     
     //method
     var method: HTTPMethod { get }
+    
+    var alert: Bool { get }
 }
 
 extension APIRequestProtocol {
@@ -58,6 +60,13 @@ enum UserAPI: APIRequestProtocol {
         switch self {
         default:
             return .get
+        }
+    }
+    
+    internal var alert: Bool {
+        switch self {
+        default:
+            return true
         }
     }
     
@@ -137,6 +146,13 @@ enum AccountAPI: APIRequestProtocol {
         }
     }
     
+    internal var alert: Bool {
+        switch self {
+        default:
+            return true
+        }
+    }
+    
     func asURLRequest() throws -> URLRequest {
         let url = try AccountAPI.baseURL.asURL()
         
@@ -203,6 +219,13 @@ enum MISCAPI: APIRequestProtocol {
             return .post
         default:
             return .get
+        }
+    }
+    
+    internal var alert: Bool {
+        switch self {
+        default:
+            return true
         }
     }
     

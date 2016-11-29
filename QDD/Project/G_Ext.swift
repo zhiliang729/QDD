@@ -49,20 +49,6 @@ extension G {
     
     //web 白名单
     static let whiteListedUrls = ["\\/\\/itunes\\.apple\\.com\\/"]
-    
-    //MARK: -- alert message
-    enum AlertMessage: String {
-        case unKnowErrorDesc = "出错了"
-        
-        //MARK: --     网络相关
-        case notConnectedToInternetDesc = "亲，您的网络连接有问题哦~~"
-        case cannotConnectToHostDesc = "对不起，无法连接到服务器"
-        case timedOutDesc = "请求超时，请重试"
-        
-        //MARK: --     登录相关
-        case loginOutOfDateDesc = "登录已过期，请重新登录"
-        case noLoginUserDesc = "您尚未登录，请登录"
-    }
 }
 
 //MARK: - HTTP log 控制

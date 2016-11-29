@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: -  key
 extension UserDefaults {
     
     public struct Key {
@@ -27,6 +28,7 @@ extension UserDefaults {
     }
 }
 
+//MARK: - ios8以下 UserAgent
 extension UserDefaults {
     
     //清除registerDefaults中的某一个项目
