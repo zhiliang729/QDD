@@ -79,6 +79,7 @@ class MiscService {
     class func upload(image: Data, attach: String, success: ((UploadImageHandler) -> Void)?, fail: ((RequestError) -> Void)? ) {
         
         HttpRequest.uploadImage(MISCAPI.imageUpload(paras: ["attach": attach]), multipartFormData: { (multipartFormData) in
+            
             multipartFormData.append(image, withName: "image", fileName: "image.png", mimeType: "image/png")
             
         }, success: { (_, json) in
