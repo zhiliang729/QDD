@@ -60,8 +60,8 @@ class AccountService {
     }
     
     //MARK: - 6.检查用户是否重复
-    class func checkUser(name: String, success: ((Bool) -> Void)?, fail: ((RequestError) -> Void)? ) {
-        HttpRequest.request(AccountAPI.checkUsername(paras: ["username": name]), success: { (_, json) in
+    class func check(username: String, success: ((Bool) -> Void)?, fail: ((RequestError) -> Void)? ) {
+        HttpRequest.request(AccountAPI.checkUsername(paras: ["username": username]), success: { (_, json) in
             let available = json["available"].boolValue
             success?(available)
         }) { (error) in
@@ -159,7 +159,7 @@ class AccountService {
     }
     
     //MARK: - 15.修改性别
-    class func changeSex(sex: Sex, success: ((User) -> Void)?, fail: ((RequestError) -> Void)? ) {
+    class func change(sex: Sex, success: ((User) -> Void)?, fail: ((RequestError) -> Void)? ) {
         HttpRequest.request(AccountAPI.changeSex(paras: ["sex": sex.rawValue]), success: { (_, json) in
             let user = User(json: json)
             success?(user)

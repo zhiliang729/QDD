@@ -30,62 +30,6 @@ extension APIRequestProtocol {
 }
 
 
-enum UserAPI: APIRequestProtocol {
-    case userInfo(id: Int)                                      //1. 获取用户信息
-    case userComments(id: Int, paras: Parameters)               //2. 获取用户评论
-    case userTopic(id: Int, paras: Parameters)                  //3. 获取用户收藏的文章
-    case userSubNode(id: Int, paras: Parameters)                //4. 获取用户订阅的收藏夹
-    case userCreateNode(id: Int)                                //5. 获取用户创建的收藏夹
-    
-    internal var path: String {
-        switch self {
-        case .userInfo(let id):                     //1. 获取用户信息
-            return "/user/\(id)/"
-        case .userComments(let id, _):                 //2. 获取用户评论
-            return "/user/\(id)/comments/"
-        case .userTopic(let id, _):                    //3. 获取用户收藏的文章
-            return "/user/\(id)/favorites/"
-        case .userSubNode(let id, _):                  //4. 获取用户订阅的收藏夹
-            return "/user/\(id)/sub_nodes/"
-        case .userCreateNode(let id):               //5. 获取用户创建的 node
-            return "/user/\(id)/nodes/"
-        }
-        
-    }
-    
-    internal var method: HTTPMethod {
-        switch self {
-        default:
-            return .get
-        }
-    }
-    
-    internal var alert: Bool {
-        switch self {
-        default:
-            return true
-        }
-    }
-    
-    func asURLRequest() throws -> URLRequest {
-        let url = try UserAPI.baseURL.asURL()
-        
-        var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
-        
-        switch self {
-        case .userComments(_, let paras),
-             .userTopic(_, let paras),
-             .userSubNode(_, let paras):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: paras)
-        default:
-            break
-        }
-        
-        return urlRequest
-    }
-}
-
-
 enum AccountAPI: APIRequestProtocol {
     case verifyCode(paras: Parameters)                  //1. 申请验证码
     case checkRegistCode(paras: Parameters)             //2. 检查验证码是否正确
@@ -184,6 +128,67 @@ enum AccountAPI: APIRequestProtocol {
     }
 }
 
+enum CurrentUserAPI: APIRequestProtocol {
+    case userInfo                                       //3.获取我的信息
+    case changeBirthday(paras: Parameters)              //4. 修改生日
+    case notifications(paras: Parameters)               //5.用户收到的通知
+    case status                                         //6.用户状态是否有新通知等
+    case location(paras: Parameters)                    //7. 上传国家 省 市
+    case desc(paras: Parameters)                        //9. 修改描述 (签名)
+    
+    internal var path: String {
+        switch self {
+        case .userInfo:                             //3.获取我的信息
+            return "/current_user/info/"
+        case .changeBirthday:                       //4. 修改生日
+            return "/current_user/birthday/"
+        case .notifications:                        //5.用户收到的通知
+            return "/current_user/notification/"
+        case .status:                               //6.用户状态是否有新通知等
+            return "/current_user/status/"
+        case .location:                             //7. 上传国家 省 市
+            return "/current_user/location/"
+        case .desc:                                 //9. 修改描述 (签名)
+            return "/current_user/desc/"
+        }
+    }
+    
+    internal var method: HTTPMethod {
+        switch self {
+        case .userInfo, .notifications, .status:
+            return .get
+        default:
+            return .post
+        }
+    }
+    
+    internal var alert: Bool {
+        switch self {
+        default:
+            return true
+        }
+    }
+    
+    func asURLRequest() throws -> URLRequest {
+        let url = try CurrentUserAPI.baseURL.asURL()
+        
+        var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
+        
+        switch self {
+        case .changeBirthday(let paras),
+             .notifications(let paras),
+             
+             .location(let paras),
+             .desc(let paras):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: paras)
+        default:
+            break
+        }
+        
+        return urlRequest
+    }
+}
+
 
 enum MISCAPI: APIRequestProtocol {
     case checkVersion                       //1.获取是否有新版本
@@ -248,5 +253,58 @@ enum MISCAPI: APIRequestProtocol {
 }
 
 
-
+enum UserAPI: APIRequestProtocol {
+    case userInfo(id: Int)                                      //1. 获取用户信息
+    case userComments(id: Int, paras: Parameters)               //2. 获取用户评论
+    case userTopic(id: Int, paras: Parameters)                  //3. 获取用户收藏的文章
+    case userSubNode(id: Int, paras: Parameters)                //4. 获取用户订阅的收藏夹
+    case userCreateNode(id: Int)                                //5. 获取用户创建的收藏夹
+    
+    internal var path: String {
+        switch self {
+        case .userInfo(let id):                     //1. 获取用户信息
+            return "/user/\(id)/"
+        case .userComments(let id, _):                 //2. 获取用户评论
+            return "/user/\(id)/comments/"
+        case .userTopic(let id, _):                    //3. 获取用户收藏的文章
+            return "/user/\(id)/favorites/"
+        case .userSubNode(let id, _):                  //4. 获取用户订阅的收藏夹
+            return "/user/\(id)/sub_nodes/"
+        case .userCreateNode(let id):               //5. 获取用户创建的 node
+            return "/user/\(id)/nodes/"
+        }
+        
+    }
+    
+    internal var method: HTTPMethod {
+        switch self {
+        default:
+            return .get
+        }
+    }
+    
+    internal var alert: Bool {
+        switch self {
+        default:
+            return true
+        }
+    }
+    
+    func asURLRequest() throws -> URLRequest {
+        let url = try UserAPI.baseURL.asURL()
+        
+        var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
+        
+        switch self {
+        case .userComments(_, let paras),
+             .userTopic(_, let paras),
+             .userSubNode(_, let paras):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: paras)
+        default:
+            break
+        }
+        
+        return urlRequest
+    }
+}
 

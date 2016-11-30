@@ -40,6 +40,9 @@
 		70CF9B081DEE7C5100E244F9 /* MiscService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9B071DEE7C5100E244F9 /* MiscService.swift */; };
 		70CF9B0A1DEE7C5C00E244F9 /* MiscServiceHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9B091DEE7C5C00E244F9 /* MiscServiceHandlers.swift */; };
 		70CF9B0C1DEE820E00E244F9 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9B0B1DEE820E00E244F9 /* Banner.swift */; };
+		70CF9B0E1DEEA92B00E244F9 /* CurrentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9B0D1DEEA92B00E244F9 /* CurrentUserService.swift */; };
+		70CF9B101DEEA93600E244F9 /* CurrentUserServiceHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9B0F1DEEA93600E244F9 /* CurrentUserServiceHandlers.swift */; };
+		70CF9B121DEEAF9700E244F9 /* Noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF9B111DEEAF9700E244F9 /* Noti.swift */; };
 		70D84D101DEC2028002F16C9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D84D0F1DEC2028002F16C9 /* API.swift */; };
 		70DF1A981DE52E8E009DC176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A971DE52E8E009DC176 /* AppDelegate.swift */; };
 		70DF1A9C1DE530F2009DC176 /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF1A9B1DE530F2009DC176 /* G.swift */; };
@@ -95,6 +98,9 @@
 		70CF9B071DEE7C5100E244F9 /* MiscService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscService.swift; sourceTree = "<group>"; };
 		70CF9B091DEE7C5C00E244F9 /* MiscServiceHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscServiceHandlers.swift; sourceTree = "<group>"; };
 		70CF9B0B1DEE820E00E244F9 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		70CF9B0D1DEEA92B00E244F9 /* CurrentUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserService.swift; sourceTree = "<group>"; };
+		70CF9B0F1DEEA93600E244F9 /* CurrentUserServiceHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserServiceHandlers.swift; sourceTree = "<group>"; };
+		70CF9B111DEEAF9700E244F9 /* Noti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noti.swift; sourceTree = "<group>"; };
 		70D84D0F1DEC2028002F16C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		70DF1A971DE52E8E009DC176 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70DF1A9B1DE530F2009DC176 /* G.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
@@ -201,6 +207,8 @@
 				70CF9B051DEE724200E244F9 /* AccountServiceHandlers.swift */,
 				70CF9B071DEE7C5100E244F9 /* MiscService.swift */,
 				70CF9B091DEE7C5C00E244F9 /* MiscServiceHandlers.swift */,
+				70CF9B0D1DEEA92B00E244F9 /* CurrentUserService.swift */,
+				70CF9B0F1DEEA93600E244F9 /* CurrentUserServiceHandlers.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 		70DF1A9E1DE531F3009DC176 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				70CF9B111DEEAF9700E244F9 /* Noti.swift */,
 				70CF9B0B1DEE820E00E244F9 /* Banner.swift */,
 				70CF9AFF1DEE6D5900E244F9 /* Source.swift */,
 				70CF9B001DEE6D5900E244F9 /* Topic.swift */,
@@ -522,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7018C9DE1DE684930043E2E1 /* BaseWebViewController.swift in Sources */,
+				70CF9B0E1DEEA92B00E244F9 /* CurrentUserService.swift in Sources */,
 				70CF9AF81DED8EB600E244F9 /* UserServiceHandlers.swift in Sources */,
 				70CED69A1DE574E700FB463A /* String_Ext.swift in Sources */,
 				70CF9AF61DED8D9400E244F9 /* UserService.swift in Sources */,
@@ -553,11 +563,13 @@
 				70DF1A981DE52E8E009DC176 /* AppDelegate.swift in Sources */,
 				70CF9B061DEE724200E244F9 /* AccountServiceHandlers.swift in Sources */,
 				70CF9B0C1DEE820E00E244F9 /* Banner.swift in Sources */,
+				70CF9B121DEEAF9700E244F9 /* Noti.swift in Sources */,
 				70CF9AFC1DEE69A000E244F9 /* Comment.swift in Sources */,
 				70F4FD301DE57B3800F3D218 /* ThirdViewController.swift in Sources */,
 				70F4FD281DE57B1A00F3D218 /* FirstViewController.swift in Sources */,
 				70CF9B081DEE7C5100E244F9 /* MiscService.swift in Sources */,
 				7018C9E11DE684930043E2E1 /* WebToolView.swift in Sources */,
+				70CF9B101DEEA93600E244F9 /* CurrentUserServiceHandlers.swift in Sources */,
 				7018C9E91DE6959E0043E2E1 /* UIColor_Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
