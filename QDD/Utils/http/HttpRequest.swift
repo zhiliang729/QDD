@@ -16,8 +16,8 @@ class HttpRequest {
     
     @discardableResult
     class func request(_ req: APIRequestProtocol,
-                       success: ((DataResponse<Any>, JSON) -> Void)?,
-                       fail: ((RequestError) -> Void)?) -> DataRequest {
+                       success: @escaping (DataResponse<Any>, JSON) -> Void,
+                       fail: @escaping (RequestError) -> Void) -> DataRequest {
         let tmp = Alamofire.request(req)
             .validate()
             .responseJSON { (res) in
@@ -25,9 +25,9 @@ class HttpRequest {
                 
                 switch res.result {
                 case .success(let data):
-                    success?(res, JSON(data))
+                    success(res, JSON(data))
                 case .failure(let error):
-                    fail?(RequestError(error: error, data: res.data, alert: req.alert))
+                    fail(RequestError(error: error, data: res.data, alert: req.alert))
                 }
         }
         return tmp
@@ -35,8 +35,8 @@ class HttpRequest {
     
     class func uploadImage(_ req: APIRequestProtocol,
                            multipartFormData:@escaping ((MultipartFormData) -> Void),
-                           success: ((DataResponse<Any>, JSON) -> Void)?,
-                           fail: ((RequestError) -> Void)?) {
+                           success: @escaping (DataResponse<Any>, JSON) -> Void,
+                           fail: @escaping (RequestError) -> Void) {
         upload(multipartFormData: multipartFormData,
                with: req,
                encodingCompletion: { (result) in
@@ -48,13 +48,13 @@ class HttpRequest {
                             
                             switch res.result {
                             case .success(let data):
-                                success?(res, JSON(data))
+                                success(res, JSON(data))
                             case .failure(let error):
-                                fail?(RequestError(error: error, data: res.data, alert: req.alert))
+                                fail(RequestError(error: error, data: res.data, alert: req.alert))
                             }
                         })
                 case .failure(let error):
-                    fail?(RequestError(error: error, data: nil, alert: req.alert))
+                    fail(RequestError(error: error, data: nil, alert: req.alert))
                 }
         })
         
@@ -62,8 +62,8 @@ class HttpRequest {
     
     @discardableResult
     class func getImage(_ req: APIRequestProtocol,
-                        success: ((DataResponse<Image>, UIImage) -> Void)?,
-                        fail: ((RequestError) -> Void)?) -> DataRequest {
+                        success: @escaping (DataResponse<Image>, UIImage) -> Void,
+                        fail: @escaping (RequestError) -> Void) -> DataRequest {
         
         DataRequest.addAcceptableImageContentTypes(["image/jpg"])
         
@@ -74,9 +74,9 @@ class HttpRequest {
                 
                 switch res.result {
                 case .success(let image):
-                    success?(res, image)
+                    success(res, image)
                 case .failure(let error):
-                    fail?(RequestError(error: error, data: res.data, alert: req.alert))
+                    fail(RequestError(error: error, data: res.data, alert: req.alert))
                 }
         }
         
