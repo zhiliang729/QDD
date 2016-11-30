@@ -13,10 +13,12 @@ import AlamofireImage
 
 
 class HttpRequest {
+    
+    @discardableResult
     class func request(_ req: APIRequestProtocol,
                        success: ((DataResponse<Any>, JSON) -> Void)?,
-                       fail: ((RequestError) -> Void)?) {
-        Alamofire.request(req)
+                       fail: ((RequestError) -> Void)?) -> DataRequest {
+        let tmp = Alamofire.request(req)
             .validate()
             .responseJSON { (res) in
                 log(res)
@@ -28,6 +30,7 @@ class HttpRequest {
                     fail?(RequestError(error: error, data: res.data, alert: req.alert))
                 }
         }
+        return tmp
     }
     
     class func uploadImage(_ req: APIRequestProtocol,
@@ -41,28 +44,30 @@ class HttpRequest {
                 case .success(let request, _, _):
                     request.validate()
                         .responseJSON(completionHandler: { (res) in
-                        log(res)
-                        
-                        switch res.result {
-                        case .success(let data):
-                            success?(res, JSON(data))
-                        case .failure(let error):
-                            fail?(RequestError(error: error, data: res.data, alert: req.alert))
-                        }
-                    })
+                            log(res)
+                            
+                            switch res.result {
+                            case .success(let data):
+                                success?(res, JSON(data))
+                            case .failure(let error):
+                                fail?(RequestError(error: error, data: res.data, alert: req.alert))
+                            }
+                        })
                 case .failure(let error):
                     fail?(RequestError(error: error, data: nil, alert: req.alert))
                 }
         })
+        
     }
     
+    @discardableResult
     class func getImage(_ req: APIRequestProtocol,
-                           success: ((DataResponse<Image>, UIImage) -> Void)?,
-                           fail: ((RequestError) -> Void)?) {
+                        success: ((DataResponse<Image>, UIImage) -> Void)?,
+                        fail: ((RequestError) -> Void)?) -> DataRequest {
         
         DataRequest.addAcceptableImageContentTypes(["image/jpg"])
         
-        Alamofire.request(req)
+        let tmp = Alamofire.request(req)
             .validate()
             .responseImage { (res) in
                 logImage(res)
@@ -74,6 +79,8 @@ class HttpRequest {
                     fail?(RequestError(error: error, data: res.data, alert: req.alert))
                 }
         }
+        
+        return tmp
     }
     
     //MARK: - LOG
