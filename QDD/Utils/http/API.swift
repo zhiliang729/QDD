@@ -31,27 +31,24 @@ extension APIRequestProtocol {
 
 
 enum UserAPI: APIRequestProtocol {
-    case userInfo(id: Int)                   //1. 获取用户信息
-    case userComments(id: Int)               //2. 获取用户评论
-    case userTopic(id: Int)                  //3. 获取用户收藏的文章
-    case userSubNode(id: Int)                //4. 获取用户订阅的收藏夹
-    case userCreateNode(id: Int)             //5. 获取用户创建的收藏夹
-    case userContriTopic(id: Int)            //7. 获取用户的投稿列表
+    case userInfo(id: Int)                                      //1. 获取用户信息
+    case userComments(id: Int, paras: Parameters)               //2. 获取用户评论
+    case userTopic(id: Int, paras: Parameters)                  //3. 获取用户收藏的文章
+    case userSubNode(id: Int, paras: Parameters)                //4. 获取用户订阅的收藏夹
+    case userCreateNode(id: Int)                                //5. 获取用户创建的收藏夹
     
     internal var path: String {
         switch self {
         case .userInfo(let id):                     //1. 获取用户信息
             return "/user/\(id)/"
-        case .userComments(let id):                 //2. 获取用户评论
+        case .userComments(let id, _):                 //2. 获取用户评论
             return "/user/\(id)/comments/"
-        case .userTopic(let id):                    //3. 获取用户收藏的文章
+        case .userTopic(let id, _):                    //3. 获取用户收藏的文章
             return "/user/\(id)/favorites/"
-        case .userSubNode(let id):                  //4. 获取用户订阅的收藏夹
+        case .userSubNode(let id, _):                  //4. 获取用户订阅的收藏夹
             return "/user/\(id)/sub_nodes/"
         case .userCreateNode(let id):               //5. 获取用户创建的 node
             return "/user/\(id)/nodes/"
-        case .userContriTopic(let id):              //7. 获取用户的投稿列表
-            return "/user/\(id)/contributions/"
         }
         
     }
@@ -76,8 +73,12 @@ enum UserAPI: APIRequestProtocol {
         var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method, headers: G.httpHeaders())
         
         switch self {
+        case .userComments(_, let paras),
+             .userTopic(_, let paras),
+             .userSubNode(_, let paras):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: paras)
         default:
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
+            break
         }
         
         return urlRequest
@@ -95,7 +96,7 @@ enum AccountAPI: APIRequestProtocol {
     case logout                                         //7. 退出登录
     case changePassword(paras: Parameters)              //8. 修改密码
     case changeUserName(paras: Parameters)              //9. 修改昵称
-    case avatar(paras: Parameters)                      //10.上传头像
+    case avatar                                         //10.上传头像
     case thirdPartyLogin(paras: Parameters)             //11.使用第三方登录
     case changeMobileNum(paras: Parameters)             //12.修改手机号码
     case forgotPassword(paras: Parameters)              //13.忘记密码
@@ -168,7 +169,7 @@ enum AccountAPI: APIRequestProtocol {
              
              .changePassword(let paras),
              .changeUserName(let paras),
-             .avatar(let paras),
+             
              .thirdPartyLogin(let paras),
              .changeMobileNum(let paras),
              .forgotPassword(let paras),
@@ -186,10 +187,10 @@ enum AccountAPI: APIRequestProtocol {
 
 enum MISCAPI: APIRequestProtocol {
     case checkVersion                       //1.获取是否有新版本
-    case flashScreen                        //2.获取闪屏图片
+    case splashScreen                       //2.获取闪屏图片
     case banner(paras: Parameters)          //3.获取banner
     case deviceActivating                   //4.设备激活
-    case pictureCaptcha                     //5. 图形验证码
+    case graphicCaptcha                     //5.图形验证码
     case settings                           //8.获取 app 的后台配置信息 是否显示广告等
     case imageUpload(paras: Parameters)     //15.上传图片
     
@@ -197,13 +198,13 @@ enum MISCAPI: APIRequestProtocol {
         switch self {
         case .checkVersion:                                     //1.获取是否有新版本
             return "/check_version/"
-        case .flashScreen:                                      //2.获取闪屏图片
+        case .splashScreen:                                      //2.获取闪屏图片
             return "/flash_screen/?wh=4_3"
         case .banner:                                           //3.获取banner
             return "/banner/"
         case .deviceActivating:                                 //4.设备激活
             return "/device_activating/"
-        case .pictureCaptcha:                                   //5. 图形验证码
+        case .graphicCaptcha:                                   //5. 图形验证码
             return "/captcha/"
         case .settings:                                         //8.获取 app 的后台配置信息 是否显示广告等
             return "/settings/"

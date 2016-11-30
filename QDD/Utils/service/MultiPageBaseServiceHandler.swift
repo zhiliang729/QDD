@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 
-class MultiPageBaseServiceHandler: BaseServiceHandler {
+public class MultiPageBaseServiceHandler: BaseServiceHandler {
     let HasMoreKey = "has_more"
     let NextStartKey = "next_start"
     

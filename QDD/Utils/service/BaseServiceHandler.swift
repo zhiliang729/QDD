@@ -10,11 +10,11 @@ import Foundation
 import SwiftyJSON
 
 
-class BaseServiceHandler {
-    var request: URLRequest?//请求信息
-    var response: HTTPURLResponse?//响应信息
+public class BaseServiceHandler {
+    public var request: URLRequest?//请求信息
+    public var response: HTTPURLResponse?//响应信息
     
-    init(json: JSON) {
+    public init(json: JSON) {
     }
 }
 
