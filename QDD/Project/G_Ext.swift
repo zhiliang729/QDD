@@ -9,11 +9,22 @@
 import Foundation
 import UIKit
 import XCGLogger
+import Kingfisher
 
 //MARK: - G 基本配置
 extension G {
     func config() {
         G.initLogger()
+        
+        //图片缓存大小，默认无限制
+//        ImageCache.default.maxDiskCacheSize = 50 * 1024 * 1024
+        //图片过期时间，默认为一周
+//        ImageCache.default.maxCachePeriodInSecond = 7 * 24 * 60 * 60
+        //设置扩展名
+//        KingfisherManager.shared.cache.pathExtension = "jpg"
+        //设置下载超时时间，默认15秒
+//        ImageDownloader.default.downloadTimeout = 30.0
+        
         G.UserInfoConfig()
     }
 }
@@ -91,7 +102,6 @@ extension G {
 //MARK: - logger配置
 extension G {
     class func initLogger() {
-        G.logger.dateFormatter = NSDate.format()
         var level = XCGLogger.Level.debug
         
         #if APPSTORE

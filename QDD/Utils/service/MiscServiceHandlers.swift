@@ -56,42 +56,6 @@ public class VersionHandler: BaseServiceHandler {
 }
 
 
-public class SplashScreenHandler: BaseServiceHandler {
-    
-    // MARK: Declaration for string constants to be used to decode and also serialize.
-    private let kSplashScreenHandlerStartTimeKey: String = "start_time"
-    private let kSplashScreenHandlerEndTimeKey: String = "end_time"
-    private let kSplashScreenHandlerImageUrlKey: String = "image_url"
-    
-    // MARK: Properties
-    public var startTime: String?
-    public var endTime: String?
-    public var imageUrl: String?
-    
-    // MARK: SwiftyJSON Initalizers
-    /**
-     Initates the instance based on the object
-     - parameter object: The object of either Dictionary or Array kind that was passed.
-     - returns: An initalized instance of the class.
-     */
-    convenience public init(object: Any) {
-        self.init(json: JSON(object))
-    }
-    
-    /**
-     Initates the instance based on the JSON that was passed.
-     - parameter json: JSON object from SwiftyJSON.
-     - returns: An initalized instance of the class.
-     */
-    public override init(json: JSON) {
-        super.init(json: json)
-        
-        startTime = json[kSplashScreenHandlerStartTimeKey].string
-        endTime = json[kSplashScreenHandlerEndTimeKey].string
-        imageUrl = json[kSplashScreenHandlerImageUrlKey].string
-    }
-}
-
 public class BannerHandler: BaseServiceHandler {
     
     // MARK: Declaration for string constants to be used to decode and also serialize.

@@ -62,3 +62,16 @@ extension String {
     }
 }
 
+import SwiftDate
+//MARK: - 转化为Date
+extension String {
+    var date: Date? {
+        do {
+            let date = try DateInRegion(string: self, format: .custom("yyyy-MM-dd HH:mm:ss"))
+            return date.absoluteDate
+        } catch {
+            return nil
+        }
+    }
+}
+

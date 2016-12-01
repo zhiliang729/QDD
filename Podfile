@@ -78,7 +78,7 @@ pod 'XCGLogger' #log工具
 
 #pod 'RegExCategories', '~> 1.0'
 
-#pod 'SwiftDate' #date 库
+pod 'SwiftDate' #date 库
 
 pod 'ReachabilitySwift', '~> 3' #Reachability in swift
 

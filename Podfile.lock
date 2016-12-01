@@ -78,6 +78,7 @@ PODS:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.5.2)
   - ShareSDK3/ShareSDKPlatforms/WeChat (3.5.2)
   - ShareSDK3/ShareSDKUI (3.5.2)
+  - SwiftDate (4.0.7)
   - SwiftyJSON (3.1.3)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
+  - SwiftDate
   - SwiftyJSON
   - XCGLogger
 
@@ -113,9 +115,10 @@ SPEC CHECKSUMS:
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SentrySwift: 186a042c29180eb93e8bf6db6ceb9988bd9c301e
   ShareSDK3: '08ed714e2bbdcd97ab60f58cb398227341dfc20a'
+  SwiftDate: 0efb04a6751b1ab804049b2b09a69848cd304c12
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 5a57e7a4d264cb66b08171ffa623fe2e9ed6e11c
+PODFILE CHECKSUM: 73460f5a21b4e51cc214ae5e1855f95915b12edb
 
 COCOAPODS: 1.2.0.beta.1
