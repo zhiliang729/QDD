@@ -65,7 +65,7 @@ extension G {
 //MARK: - HTTP log 控制
 extension G {
     static let ShowHTTPURL = false//是否显示http url
-    static let ShowHTTPError = false //是否显示http error
+    static let ShowHTTPError = true //是否显示http error
     static let ShowHttpRespond = false//是否显示http response
     static let ShowUserAgent = false //是否显示http useragent
     static let ShowHostCookie = true //是否显示http cookies
@@ -259,6 +259,39 @@ extension G {
     //MARK: -- 推出vc页面
     class func push(_ vc: UIViewController) {
         G.appdelegate.mainDelegate.push(vc)
+    }
+}
+
+//MARK: - 闪屏图片
+extension G {
+    
+    class func getScreen(finish: ((Bool) -> Void)?) {
+        MiscService.splashScreen(success: { (screen) in
+            if let screen = screen {
+                if ImageCache.default.isImageCached(forKey: screen.imageUrl ?? "").cached {//本地已有此图片，不用再下载，直接返回
+                    SplashScreen.save(screen: screen)
+                    finish?(true)
+                } else if let urlstr = screen.imageUrl, let url = URL(string: urlstr) { //本地没有此图片，先删除旧的闪屏，再下载新的
+                    SplashScreen.clearScreen() //清除旧的闪屏(无论是否过期)
+                    
+                    ImageDownloader.default.downloadImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, error, url, data) in
+                        if let img = image {
+                            ImageCache.default.store(img, forKey: urlstr)
+                            SplashScreen.save(screen: screen)
+                            finish?(true)
+                        } else {
+                            finish?(false)
+                        }
+                    })
+                } else {
+                    finish?(false)
+                }
+            } else {
+                finish?(false)
+            }
+        }, fail: { (error) in
+            finish?(false)
+        })
     }
 }
 

@@ -10,9 +10,7 @@ import SwiftyJSON
 import SwiftDate
 import Kingfisher
 
-public class SplashScreen: NSCoding {
-    
-    public static let CacheKey = "com.hothuati.splashscreenkey"
+public class SplashScreen: NSObject, NSCoding {
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     private let kSplashScreenStartTimeKey: String = "start_time"
@@ -102,7 +100,7 @@ public class SplashScreen: NSCoding {
             } else {
                 
                 //已过期，清除
-                ImageCache.default.removeImage(forKey: CacheKey)
+                ImageCache.default.removeImage(forKey: screen.imageUrl ?? "")
                 clearUserDefaults()
             }
         }
@@ -112,8 +110,8 @@ public class SplashScreen: NSCoding {
     
     //MARK: 删除数据
     public class func clearScreen() {
-        if validScreen() != nil {
-            ImageCache.default.removeImage(forKey: CacheKey)
+        if let screen = validScreen() {
+            ImageCache.default.removeImage(forKey: screen.imageUrl ?? "")
         }
         
         UserDefaults.standard.set(nil, forKey: UserDefaults.Key.SplashScreen)

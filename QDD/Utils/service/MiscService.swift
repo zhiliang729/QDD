@@ -30,11 +30,16 @@ class MiscService {
     
     //MARK: - 2.获取闪屏图片
     @discardableResult
-    class func splashScreen(success: @escaping (SplashScreen) -> Void, fail: @escaping (RequestError) -> Void ) -> DataRequest {
+    class func splashScreen(success: @escaping (SplashScreen?) -> Void, fail: @escaping (RequestError) -> Void ) -> DataRequest {
         
         let tmp = HttpRequest.request(MISCAPI.splashScreen, success:{ (_, json) in
             let handler = SplashScreen(json: json)
-            success(handler)
+            
+            if let url = handler.imageUrl, url.isEmpty {
+                success(nil)
+            } else {
+                success(handler)
+            }
         }, fail: { (error) in
             fail(error)
         })

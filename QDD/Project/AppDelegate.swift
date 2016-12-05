@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate var hostReach: Reachability?
     
+    fileprivate var helpView: StartHelpView?
+    
     #if APPSTORE
     #else
     fileprivate var platformView: PlatformChangeView? //平台切换view  只在 非APPSTORE下 有效
@@ -547,14 +549,29 @@ extension AppDelegate {
         let enterAppHandler = {
             G.shared.finishedStartHelp = true
             
+            self.helpView?.removeFromSuperview()
+            self.helpView = nil
+            
+            //TODO: -- 其他进入首页的准备工作
+            
+            //MARK: --已显示首页消息
             NotificationCenter.default.post(name: Notification.Name.App.AlreadyShowHomePage, object: nil)
             
+            //MARK: -- 启动之后推送处理 显示推送
             self.mainDelegate.handleRemotePush()
         }
         
         if !G.shared.finishedStartHelp {
-            //TODO: 启动帮助页显示
-            enterAppHandler()
+            
+            helpView = StartHelpView(frame: UIScreen.main.bounds)
+            helpView!.enterAppHandler = enterAppHandler
+            
+            if UIApplication.shared.windows.count > 0 {
+                let window = UIApplication.shared.windows[0]
+                window.addSubview(helpView!)
+            }
+            
+            helpView!.show()
         }
     }
 }

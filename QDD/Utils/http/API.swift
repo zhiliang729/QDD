@@ -204,7 +204,7 @@ enum MISCAPI: APIRequestProtocol {
         case .checkVersion:                                     //1.获取是否有新版本
             return "/check_version/"
         case .splashScreen:                                      //2.获取闪屏图片
-            return "/flash_screen/?wh=4_3"
+            return "/flash_screen/"
         case .banner:                                           //3.获取banner
             return "/banner/"
         case .deviceActivating:                                 //4.设备激活
