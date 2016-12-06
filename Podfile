@@ -80,6 +80,8 @@ pod 'XCGLogger' #log工具
 
 pod 'SwiftDate' #date 库
 
+pod 'Cartography'#AutoLayout 库
+
 pod 'ReachabilitySwift', '~> 3' #Reachability in swift
 
 #pod 'ImageScout' #最小代价获取远程图片大小及类型

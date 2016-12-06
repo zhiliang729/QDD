@@ -1,9 +1,7 @@
 //
-//  NSDictionary+Merge.h
+//  RFC3339UTFString.c
 //
-//  Created by Karl Stenerud on 2012-10-01.
-//
-//  Copyright (c) 2012 Karl Stenerud. All rights reserved.
+// Copyright 2016 Karl Stenerud.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,29 +22,19 @@
 // THE SOFTWARE.
 //
 
+#include "RFC3339UTFString.h"
+#include <stdio.h>
+#include <time.h>
 
-#import <Foundation/Foundation.h>
-
-
-/** Adds dictionary merging capabilities.
- */
-@interface NSDictionary (KSMerge)
-
-/** Recursively merge this dictionary into the destination dictionary.
- * If the same key exists in both dictionaries, the following occurs:
- * - If both entries are dictionaries, the sub-dictionaries are merged and
- *   placed into the merged dictionary.
- * - Otherwise the entry from this dictionary overrides the entry from the
- *   destination in the merged dictionary.
- *
- * Note: Neither this dictionary nor the destination will be modified by this
- *       operation.
- *
- * @param dest The dictionary to merge into. Can be nil or empty, in which case
- *             this dictionary is returned.
- *
- * @return The merged dictionary.
- */
-- (NSDictionary*) mergedInto:(NSDictionary*) dest;
-
-@end
+void rfc3339UtcStringFromUNIXTimestamp(time_t timestamp, char* buffer21Chars)
+{
+    struct tm result = {0};
+    gmtime_r(&timestamp, &result);
+    snprintf(buffer21Chars, 21, "%04d-%02d-%02dT%02d:%02d:%02dZ",
+             result.tm_year + 1900,
+             result.tm_mon+1,
+             result.tm_mday,
+             result.tm_hour,
+             result.tm_min,
+             result.tm_sec);
+}

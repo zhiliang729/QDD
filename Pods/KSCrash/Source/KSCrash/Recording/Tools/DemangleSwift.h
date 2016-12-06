@@ -1,7 +1,7 @@
 //
-//  NSDictionary+Merge.m
+//  DemangleSwift.h
 //
-//  Created by Karl Stenerud on 2012-10-01.
+//  Created by Karl Stenerud on 2016-11-04.
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -24,38 +24,24 @@
 // THE SOFTWARE.
 //
 
+#ifndef HDR_DemangleSwift_h
+#define HDR_DemangleSwift_h
 
-#import "NSDictionary+Merge.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-
-@implementation NSDictionary (KSMerge)
-
-- (NSDictionary*) mergedInto:(NSDictionary*) dest
-{
-    if([dest count] == 0)
-    {
-        return self;
-    }
-    if([self count] == 0)
-    {
-        return dest;
-    }
-
-    NSMutableDictionary* dict = [dest mutableCopy];
-    for(id key in [self allKeys])
-    {
-        id srcEntry = [self objectForKey:key];
-        id dstEntry = [dest objectForKey:key];
-        if([dstEntry isKindOfClass:[NSDictionary class]] &&
-           [srcEntry isKindOfClass:[NSDictionary class]])
-        {
-            srcEntry = [srcEntry mergedInto:dstEntry];
-        }
-        [dict setObject:srcEntry forKey:key];
-    }
-    return dict;
+/** Demangle a Swift symbol.
+ *
+ * @param mangledSymbol The mangled symbol.
+ *
+ * @return A demangled symbol, or NULL if demangling failed.
+ *         MEMORY MANAGEMENT WARNING: User is responsible for calling free() on the returned value.
+ */
+char* demangleSwift(const char* mangledSymbol);
+    
+#ifdef __cplusplus
 }
+#endif
 
-@end
-
-@interface NSDictionary_Merge_O8FG4A : NSObject @end @implementation NSDictionary_Merge_O8FG4A @end
+#endif // HDR_DemangleSwift_h

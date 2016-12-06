@@ -10,12 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
 class FirstViewController: BaseTabItemViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
     }
 

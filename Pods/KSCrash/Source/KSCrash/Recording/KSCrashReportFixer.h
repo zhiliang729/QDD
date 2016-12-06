@@ -1,7 +1,7 @@
 //
-//  KSSystemInfoC.h
+//  KSCrashReportFixer.c
 //
-//  Created by Karl Stenerud on 2012-05-08.
+//  Created by Karl Stenerud on 2016-11-07.
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -24,33 +24,28 @@
 // THE SOFTWARE.
 //
 
-
-/* C interface to the system information.
- */
-
-
-#ifndef KSCrash_KSSystemInfoC_h
-#define KSCrash_KSSystemInfoC_h
+#ifndef HDR_KSCrashReportFixer_h
+#define HDR_KSCrashReportFixer_h
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-/** Get the complete system info dictionary encoded to JSON.
+/** Fixes up fields in a crash report that could not be fixed up at crash time.
+ * Some fields, such a mangled fields and dates, cannot be fixed up at crash time
+ * because the function calls needed to do it are not async-safe.
  *
- * @return System info as JSON. Caller is responsible for calling free().
+ * @param crashReport A raw report loaded from disk.
+ *
+ * @return A fixed up crash report.
+ *         MEMORY MANAGEMENT WARNING: User is responsible for calling free() on the returned value.
  */
-const char* kssysteminfo_toJSON(void);
+char* kscrf_fixupCrashReport(const char* crashReport);
 
-/** Create a copy of the current process name.
- *
- * @return The process name. Caller is responsible for calling free().
- */
-char* kssysteminfo_copyProcessName(void);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif // HDR_KSCrashReportFixer_h

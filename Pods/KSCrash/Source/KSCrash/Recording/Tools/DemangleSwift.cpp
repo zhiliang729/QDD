@@ -1,7 +1,7 @@
 //
-//  NSMutableData+AppendUTF8.m
+//  DemangleSwift.cc
 //
-//  Created by Karl Stenerud on 2012-02-26.
+//  Created by Karl Stenerud on 2016-11-04.
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -25,42 +25,16 @@
 //
 
 
-#import "NSString+Demangle.h"
-#import "Demangle.h"
-#include <cxxabi.h>
+#include "Demangle.h"
+#include "DemangleSwift.h"
 
-@implementation NSString (Demangle)
-
-- (NSString*) demangledAsSwift
+extern "C" char* demangleSwift(const char* mangledSymbol)
 {
     swift::Demangle::DemangleOptions options = swift::Demangle::DemangleOptions::SimplifiedUIDemangleOptions();
-    std::string demangled = swift::Demangle::demangleSymbolAsString(self.UTF8String, options);
+    std::string demangled = swift::Demangle::demangleSymbolAsString(mangledSymbol, options);
     if(demangled.length() == 0)
     {
-        return nil;
+        return NULL;
     }
-    return [NSString stringWithUTF8String:demangled.c_str()];
+    return strdup(demangled.c_str());
 }
-
-- (NSString*) demangledAsCPP
-{
-    NSString* result = nil;
-    int status = 0;
-    char* demangled = __cxxabiv1::__cxa_demangle(self.UTF8String, NULL, NULL, &status);
-
-    if(status == 0 && demangled != NULL)
-    {
-        result = [NSString stringWithUTF8String:demangled];
-    }
-
-    if(demangled != NULL)
-    {
-        free(demangled);
-    }
-
-    return result;
-}
-
-@end
-
-@interface NSString_Demangle_GH992D : NSObject @end @implementation NSString_Demangle_GH992D @end

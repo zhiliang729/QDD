@@ -2,51 +2,52 @@ PODS:
   - Alamofire (4.2.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - Cartography (1.0.1)
   - FDFullscreenPopGesture (1.1)
   - HTTPStatusCodes (3.1.0)
   - JPush (2.2.0.1)
   - Kingfisher (3.2.2)
-  - KSCrash (1.8.13):
-    - KSCrash/Installations (= 1.8.13)
-  - KSCrash/Installations (1.8.13):
+  - KSCrash (1.11.2):
+    - KSCrash/Installations (= 1.11.2)
+  - KSCrash/Installations (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting
-  - KSCrash/Recording (1.8.13)
-  - KSCrash/Reporting (1.8.13):
+  - KSCrash/Recording (1.11.2)
+  - KSCrash/Reporting (1.11.2):
     - KSCrash/Recording
-    - KSCrash/Reporting/Filters (= 1.8.13)
-    - KSCrash/Reporting/MessageUI (= 1.8.13)
-    - KSCrash/Reporting/Sinks (= 1.8.13)
-    - KSCrash/Reporting/Tools (= 1.8.13)
-  - KSCrash/Reporting/Filters (1.8.13):
+    - KSCrash/Reporting/Filters (= 1.11.2)
+    - KSCrash/Reporting/MessageUI (= 1.11.2)
+    - KSCrash/Reporting/Sinks (= 1.11.2)
+    - KSCrash/Reporting/Tools (= 1.11.2)
+  - KSCrash/Reporting/Filters (1.11.2):
     - KSCrash/Recording
-    - KSCrash/Reporting/Filters/Alert (= 1.8.13)
-    - KSCrash/Reporting/Filters/AppleFmt (= 1.8.13)
-    - KSCrash/Reporting/Filters/Base (= 1.8.13)
-    - KSCrash/Reporting/Filters/Basic (= 1.8.13)
-    - KSCrash/Reporting/Filters/GZip (= 1.8.13)
-    - KSCrash/Reporting/Filters/JSON (= 1.8.13)
-    - KSCrash/Reporting/Filters/Sets (= 1.8.13)
-    - KSCrash/Reporting/Filters/Stringify (= 1.8.13)
-    - KSCrash/Reporting/Filters/Tools (= 1.8.13)
-  - KSCrash/Reporting/Filters/Alert (1.8.13):
-    - KSCrash/Recording
-    - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/AppleFmt (1.8.13):
+    - KSCrash/Reporting/Filters/Alert (= 1.11.2)
+    - KSCrash/Reporting/Filters/AppleFmt (= 1.11.2)
+    - KSCrash/Reporting/Filters/Base (= 1.11.2)
+    - KSCrash/Reporting/Filters/Basic (= 1.11.2)
+    - KSCrash/Reporting/Filters/GZip (= 1.11.2)
+    - KSCrash/Reporting/Filters/JSON (= 1.11.2)
+    - KSCrash/Reporting/Filters/Sets (= 1.11.2)
+    - KSCrash/Reporting/Filters/Stringify (= 1.11.2)
+    - KSCrash/Reporting/Filters/Tools (= 1.11.2)
+  - KSCrash/Reporting/Filters/Alert (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Base (1.8.13):
-    - KSCrash/Recording
-  - KSCrash/Reporting/Filters/Basic (1.8.13):
+  - KSCrash/Reporting/Filters/AppleFmt (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/GZip (1.8.13):
+  - KSCrash/Reporting/Filters/Base (1.11.2):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/JSON (1.8.13):
+  - KSCrash/Reporting/Filters/GZip (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Sets (1.8.13):
+  - KSCrash/Reporting/Filters/JSON (1.11.2):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Sets (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/AppleFmt
     - KSCrash/Reporting/Filters/Base
@@ -54,23 +55,23 @@ PODS:
     - KSCrash/Reporting/Filters/GZip
     - KSCrash/Reporting/Filters/JSON
     - KSCrash/Reporting/Filters/Stringify
-  - KSCrash/Reporting/Filters/Stringify (1.8.13):
+  - KSCrash/Reporting/Filters/Stringify (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Tools (1.8.13):
+  - KSCrash/Reporting/Filters/Tools (1.11.2):
     - KSCrash/Recording
-  - KSCrash/Reporting/MessageUI (1.8.13):
+  - KSCrash/Reporting/MessageUI (1.11.2):
     - KSCrash/Recording
-  - KSCrash/Reporting/Sinks (1.8.13):
+  - KSCrash/Reporting/Sinks (1.11.2):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters
     - KSCrash/Reporting/Tools
-  - KSCrash/Reporting/Tools (1.8.13):
+  - KSCrash/Reporting/Tools (1.11.2):
     - KSCrash/Recording
   - MOBFoundation (2.2.3)
   - ReachabilitySwift (3)
-  - SentrySwift (0.4.1):
-    - KSCrash (~> 1.8.5)
+  - SentrySwift (1.1.0):
+    - KSCrash (~> 1.11.2)
   - ShareSDK3 (3.5.2):
     - ShareSDK3/ShareSDK (= 3.5.2)
   - ShareSDK3/ShareSDK (3.5.2)
@@ -87,6 +88,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4)
   - AlamofireImage (~> 3)
+  - Cartography
   - FDFullscreenPopGesture
   - HTTPStatusCodes
   - JPush
@@ -106,19 +108,20 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   HTTPStatusCodes: e0747e2497f1c887944a306b7d7122cb2a01f553
   JPush: c891ec9f6fae587db642c4ac28d19d5abc5d61bb
   Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
-  KSCrash: 4c3a83f133b60f4bd57e05235ebf8d46e36d378d
+  KSCrash: 8acc46aca72b2772d5d1e3cba1da9173db4d705e
   MOBFoundation: 2bc5cd7011a2db75cf2b3ceacb7f4227eec88f3e
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  SentrySwift: 186a042c29180eb93e8bf6db6ceb9988bd9c301e
+  SentrySwift: dfd125c3bf9bc1c79ea926a6491f44221bc022e3
   ShareSDK3: '08ed714e2bbdcd97ab60f58cb398227341dfc20a'
   SwiftDate: 9aa3259d8850d818bec02802f8f05aa9a8c26fdb
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 73460f5a21b4e51cc214ae5e1855f95915b12edb
+PODFILE CHECKSUM: ae30789b9ead0b591b67696566051a4b16ec1afa
 
 COCOAPODS: 1.2.0.beta.1

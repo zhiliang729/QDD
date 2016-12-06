@@ -1,7 +1,9 @@
 //
-// RFC3339DateTool.h
+//  DemangleCPP.h
 //
-// Copyright 2010 Karl Stenerud
+//  Created by Karl Stenerud on 2016-11-04.
+//
+//  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,45 +24,24 @@
 // THE SOFTWARE.
 //
 
+#ifndef HDR_DemangleCPP_h
+#define HDR_DemangleCPP_h
 
-#import <Foundation/Foundation.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-
-/**
- * Tool for converting to/from RFC3339 compliant date strings.
+/** Demangle a C++ symbol.
+ *
+ * @param mangledSymbol The mangled symbol.
+ *
+ * @return A demangled symbol, or NULL if demangling failed.
+ *         MEMORY MANAGEMENT WARNING: User is responsible for calling free() on the returned value.
  */
-@interface RFC3339DateTool : NSObject
+char* demangleCPP(const char* mangledSymbol);
 
-/** Convert a date to an RFC3339 string representation.
- *
- * @param date The date to convert.
- *
- * @return The RFC3339 date string.
- */
-+ (NSString*) stringFromDate:(NSDate*) date;
+#ifdef __cplusplus
+}
+#endif
 
-/** Convert an RFC3339 string representation to a date.
- *
- * @param string The string to convert.
- *
- * @return The date.
- */
-+ (NSDate*) dateFromString:(NSString*) string;
-
-/** Convert a UNIX timestamp to an RFC3339 string representation.
- *
- * @param date The date to convert.
- *
- * @return The RFC3339 date string.
- */
-+ (NSString*) stringFromUNIXTimestamp:(unsigned long long) timestamp;
-
-/** Convert an RFC3339 string representation to a UNIX timestamp.
- *
- * @param string The string to convert.
- *
- * @return The timestamp.
- */
-+ (unsigned long long) UNIXTimestampFromString:(NSString*) string;
-
-@end
+#endif // HDR_DemangleCPP_h

@@ -1,9 +1,7 @@
 //
-//  KSSafeCollections.h
+// RFC3339UTFString.h
 //
-//  Created by Karl Stenerud on 2012-08-21.
-//
-//  Copyright (c) 2012 Karl Stenerud. All rights reserved.
+// Copyright 2016 Karl Stenerud.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,31 +22,17 @@
 // THE SOFTWARE.
 //
 
+#ifndef RFC3339DateToolC_h
+#define RFC3339DateToolC_h
 
-#import <Foundation/Foundation.h>
+#include <sys/types.h>
 
+/** Convert a UNIX timestamp to an RFC3339 string representation.
+ *
+ * @param timestamp The date to convert.
+ *
+ * @param buffer21Chars A buffer of at least 21 chars to hold the RFC3339 date string.
+ */
+void rfc3339UtcStringFromUNIXTimestamp(time_t timestamp, char* buffer21Chars);
 
-@interface NSMutableArray (KSSafeCollections)
-
-- (void) ksc_addObjectIfNotNil:(id) object;
-
-- (void) ksc_safeAddObject:(id) object;
-
-- (void) ksc_insertObjectIfNotNil:(id) object atIndex:(NSUInteger) index;
-
-- (void) ksc_safeInsertObject:(id) object atIndex:(NSUInteger) index;
-
-@end
-
-
-@interface NSMutableDictionary (KSSafeCollections)
-
-- (void) ksc_setObjectIfNotNil:(id) object forKey:(id) key;
-
-- (void) ksc_safeSetObject:(id) object forKey:(id) key;
-
-- (void) ksc_setValueIfNotNil:(id) value forKey:(NSString*) key;
-
-- (void) ksc_safeSetValue:(id) value forKey:(NSString*) key;
-
-@end
+#endif /* RFC3339DateToolC_h */
