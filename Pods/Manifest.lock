@@ -2,7 +2,9 @@ PODS:
   - Alamofire (4.2.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - Cartography (1.0.1)
+  - Cent (6.0.3):
+    - Dollar (~> 6.1.0)
+  - Dollar (6.1.0)
   - FDFullscreenPopGesture (1.1)
   - HTTPStatusCodes (3.1.0)
   - JPush (2.2.0.1)
@@ -88,7 +90,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4)
   - AlamofireImage (~> 3)
-  - Cartography
+  - Cent
+  - Dollar
   - FDFullscreenPopGesture
   - HTTPStatusCodes
   - JPush
@@ -108,7 +111,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  Cent: 2e2deb7ced0fc6c4c320075ddd4f63ed8defd8db
+  Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   HTTPStatusCodes: e0747e2497f1c887944a306b7d7122cb2a01f553
   JPush: c891ec9f6fae587db642c4ac28d19d5abc5d61bb
@@ -122,6 +126,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: ae30789b9ead0b591b67696566051a4b16ec1afa
+PODFILE CHECKSUM: 4beb19b67acd4ddfa5cabe492d1191f40511e1b2
 
 COCOAPODS: 1.2.0.beta.1

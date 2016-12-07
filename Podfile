@@ -63,6 +63,15 @@ pod 'SentrySwift' #Sentry raven库
 
 #pod 'Spring' #动画view
 
+#pod 'Eureka' #form提交ui工具
+
+#pod 'TextFieldEffects' #textfield 效果
+
+
+#sqlite数据库 Document: https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#sqliteswift-documentation
+#pod 'SQLite.swift'
+
+
 #pod 'SwiftFilePath'   #轻量级路径工具 (暂时用不到，因为项目里几乎不用创建路径等)
 #还有一个类似的 PathKit 但是感觉没这个好用
 
@@ -72,17 +81,25 @@ pod 'XCGLogger' #log工具
 
 #pod 'AsyncSwift' #dispatch执行代码封装库   https://github.com/duemunk/Async
 
-#pod 'Dollar' # https://github.com/ankurp/Dollar.swift 很好用
+    #A functional tool-belt for Swift Language similar to Lo-Dash
+    #or Underscore.js in Javascript https://www.dollarswift.org
+pod 'Dollar'
 
-#pod 'Cent'  # 和上面同一个地址 一些拓展
+pod 'Cent'
 
 #pod 'RegExCategories', '~> 1.0'
 
 pod 'SwiftDate' #date 库
 
-pod 'Cartography'#AutoLayout 库
+#pod 'Cartography'#AutoLayout 库
 
 pod 'ReachabilitySwift', '~> 3' #Reachability in swift
+
+
+     #A Swift library that uses the Accelerate framework
+     #to provide high-performance functions for matrix math,
+     #digital signal processing, and image manipulation.
+#pod 'Surge'
 
 #pod 'ImageScout' #最小代价获取远程图片大小及类型
 
