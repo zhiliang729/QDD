@@ -3,11 +3,14 @@
 //
 
 
-#pragma mark-- jpush
+#ifndef QDD_Bridging_Header_h
+#define QDD_Bridging_Header_h
+
+#pragma mark -- jpush
 #import <JPUSHService.h>
 
 
-#pragma mark-- shareSdk相关
+#pragma mark -- shareSdk相关
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #import <ShareSDKUI/SSUIEditorViewStyle.h>
@@ -26,5 +29,8 @@
 //支付宝SDK
 //#import "APOpenAPI.h"
 
-#pragma mark -- 第三方
+//#pragma mark -- MJRefresh
+//#import "MJRefresh/MJRefresh.h"
+
+#endif /*QDD_Bridging_Header_h*/
 

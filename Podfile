@@ -9,6 +9,8 @@ target 'QDD' do
 
 pod 'JPush'# 极光推送
 
+pod 'MJRefresh'
+
 #pod 'UMengAnalytics'#友盟分析
 
 pod 'FDFullscreenPopGesture' #全屏右划返回
