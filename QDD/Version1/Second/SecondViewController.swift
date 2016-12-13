@@ -20,6 +20,8 @@ class SecondViewController: BaseTabItemViewController {
         
         let footer = MJRefreshFooter()
         mtableview.mj_footer = footer
+        
+        
     }
     
     
