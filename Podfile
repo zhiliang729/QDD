@@ -9,7 +9,7 @@ target 'QDD' do
 
 pod 'JPush'# 极光推送
 
-pod 'MJRefresh'
+pod 'MJRefresh' #下拉刷新
 
 #pod 'UMengAnalytics'#友盟分析
 

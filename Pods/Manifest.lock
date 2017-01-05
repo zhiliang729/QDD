@@ -8,7 +8,7 @@ PODS:
   - FDFullscreenPopGesture (1.1)
   - HTTPStatusCodes (3.1.0)
   - JPush (3.0.0)
-  - Kingfisher (3.2.2)
+  - Kingfisher (3.2.4)
   - KSCrash (1.11.2):
     - KSCrash/Installations (= 1.11.2)
   - KSCrash/Installations (1.11.2):
@@ -71,18 +71,24 @@ PODS:
   - KSCrash/Reporting/Tools (1.11.2):
     - KSCrash/Recording
   - MJRefresh (3.1.12)
-  - MOBFoundation (2.2.10)
+  - MOBFoundation (2.2.13)
   - ReachabilitySwift (3)
-  - SentrySwift (1.2.0):
+  - SentrySwift (1.3.3):
     - KSCrash (~> 1.11.2)
-  - ShareSDK3 (3.5.2):
-    - ShareSDK3/ShareSDK (= 3.5.2)
-  - ShareSDK3/ShareSDK (3.5.2)
-  - ShareSDK3/ShareSDKPlatforms/QQ (3.5.2)
-  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.5.2)
-  - ShareSDK3/ShareSDKPlatforms/WeChat (3.5.2)
-  - ShareSDK3/ShareSDKUI (3.5.2)
-  - SwiftDate (4.0.8)
+  - ShareSDK3 (3.5.7):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 3.5.7)
+  - ShareSDK3/ShareSDK (3.5.7):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.5.7):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.5.7):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.5.7):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKUI (3.5.7):
+    - MOBFoundation
+  - SwiftDate (4.0.10)
   - SwiftyJSON (3.1.3)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -118,17 +124,17 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   HTTPStatusCodes: e0747e2497f1c887944a306b7d7122cb2a01f553
   JPush: '042699376efe1d511ef32e0ef1a41deb1b6da123'
-  Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   KSCrash: 8acc46aca72b2772d5d1e3cba1da9173db4d705e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  MOBFoundation: 3cca6f267be8ea7643be0d27ec871b66b64e32fd
+  MOBFoundation: 1db1fdc4f1cf9130277cd01f66d6ee7d42a32510
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  SentrySwift: 7bcdcba2f3e38ecfb58194943117963f266432e8
-  ShareSDK3: '08ed714e2bbdcd97ab60f58cb398227341dfc20a'
-  SwiftDate: 9aa3259d8850d818bec02802f8f05aa9a8c26fdb
+  SentrySwift: 01fa48cb91b9422d492ca1f3d0666e6ef078a32b
+  ShareSDK3: 47f50f8217b9542255c573c8ac4392af1c50b0ed
+  SwiftDate: efdff69cf3750c2e4ef4fb9f0461e22b40c4c942
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 7aee4b6f48a113ea88c3fdb668f219e86caff68f
+PODFILE CHECKSUM: 532946eac10d31f68f53e403d6fbbef08b929336
 
 COCOAPODS: 1.2.0.beta.1

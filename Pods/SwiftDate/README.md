@@ -23,6 +23,17 @@ Here's a highlight of the main features you can find in SwiftDate:
 * **Many shortcuts to get intervals, work with time units, intervals and common date operations** (`isYesterday,isTomorrow,isBefore()`...)
 * ... [many many other shiny things!](http://malcommac.github.io/SwiftDate)
 
+## You also may like
+
+Do you like `SwiftDate`? I'm also working on several other opensource libraries.
+
+Take a look here:
+
+* **[SwiftLocation](https://github.com/malcommac/SwiftLocation)** - CoreLocation and Beacon Monitoring on steroid!
+* **[SwiftRichString](https://github.com/malcommac/SwiftRichString)** - Elegant and painless attributed string in Swift
+* **[SwiftScanner](https://github.com/malcommac/SwiftScanner)** - String scanner in pure Swift with full unicode support
+* **[SwiftSimplify](https://github.com/malcommac/SwiftSimplify)** - Tiny high-performance Swift Polyline Simplification Library
+
 ## How to get started
 
 * **Check our website [http://malcommac.github.io/SwiftDate/index.html](http://malcommac.github.io/SwiftDate) to learn more about all available functions with a comprehensive list of examples**
@@ -46,7 +57,7 @@ You can also generate the latest documentation using [Jazzy](https://github.com/
 
 ## Current Release
 
-Latest release is: 4.0.8 [Download here](https://github.com/malcommac/SwiftDate/releases/tag/4.0.8) released on Thu, Dec 1, 2016.
+Latest release is: 4.0.9 [Download here](https://github.com/malcommac/SwiftDate/releases/tag/4.0.9).
 
 A complete list of changes for each release is available in the [CHANGELOG](CHANGELOG.md) file.
 
@@ -69,6 +80,9 @@ Currently SwiftDate supports:
 * Slovak (made by [beretis](https://github.com/beretis), since 4.0.8)
 * Korean (made by [KisukPark](https://github.com/KisukPark), since 4.0.8)
 * Turkish (made by [fatihyildizhan](https://github.com/fatihyildizhan), since 4.0.8)
+* Vietnamese (made by [solbadguyky](https://github.com/solbadguyky), since 4.0.9)
+* Japanese (made by [bati668](https://github.com/bati668), since 4.0.9)
+
 
 Make a pull request and add your language!
 
@@ -127,7 +141,7 @@ Run `carthage` to build the framework and drag the built `SwiftDate.framework` i
 
 ## Requirements
 
-The current version (4.0.8) is compatible with:
+Current version is compatible with:
 
 * Swift 3.0+
 * iOS 8 or later

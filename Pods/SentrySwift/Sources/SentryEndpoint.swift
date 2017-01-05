@@ -18,9 +18,9 @@ enum HttpMethod: String {
 
 protocol Endpoint {
     var httpMethod: HttpMethod { get }
-    func route(dsn dsn: DSN) -> NSURL?
-    var payload: NSData { get }
-    func send(dsn: DSN, finished: SentryEndpointRequestFinished?)
+    var payload: Data { get }
+    func send(requestManager: RequestManager, dsn: DSN, finished: SentryEndpointRequestFinished?)
+    func routeForDsn(_ dsn: DSN) -> URL?
 }
 
 enum SentryEndpoint: Endpoint {
@@ -36,11 +36,63 @@ enum SentryEndpoint: Endpoint {
         }
     }
     
-    func route(dsn dsn: DSN) -> NSURL? {
-        let components = NSURLComponents()
+    var payload: Data {
+        switch self {
+        case .store(let event):
+            do {
+                var eventToSend = event
+                if let transform = SentryClient.shared?.beforeSendEventBlock {
+                    transform(&eventToSend)
+                }
+                
+                let serializedEvent = eventToSend.serialized
+                guard JSONSerialization.isValidJSONObject(serializedEvent) else {
+                    SentryLog.Error.log("Could not serialized event")
+                    return Data()
+                }
+                #if swift(>=3.0)
+                    return try JSONSerialization.data(withJSONObject: serializedEvent, options: [])
+                #else
+                    return try JSONSerialization.dataWithJSONObject(serializedEvent, options: [])
+                #endif
+            } catch {
+                SentryLog.Error.log("Could not serialized event - \(error)")
+                return Data()
+            }
+        case .storeSavedEvent(let savedEvent):
+            return savedEvent.data
+        case .userFeedback(let userFeedback):
+            guard let data = userFeedback.serialized else {
+                SentryLog.Error.log("Could not serialize userFeedback")
+                return Data()
+            }
+            return data
+        }
+    }
+    
+    func send(requestManager: RequestManager, dsn: DSN, finished: SentryEndpointRequestFinished? = nil) {
+        guard let url = routeForDsn(dsn) else {
+            SentryLog.Error.log("Cannot find route for \(self)")
+            finished?(false)
+            return
+        }
+        
+        #if swift(>=3.0)
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+        #else
+            let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        #endif
+        
+        configureRequestWithDsn(dsn, request: request)
+        
+        requestManager.addRequest(request as URLRequest, finished: finished)
+    }
+    
+    func routeForDsn(_ dsn: DSN) -> URL? {
+        var components = URLComponents()
         components.scheme = dsn.url.scheme
         components.host = dsn.url.host
-        components.port = dsn.url.port
+        components.port = dsn.url.port as Int?
         
         switch self {
         case .store(_), .storeSavedEvent(_):
@@ -52,46 +104,18 @@ enum SentryEndpoint: Endpoint {
         }
         
         #if swift(>=3.0)
-            return components.url as NSURL?
+            return components.url
         #else
             return components.URL
         #endif
     }
     
-    var payload: NSData {
-        switch self {
-        case .store(let event):
-            guard JSONSerialization.isValidJSONObject(event.serialized) else {
-                SentryLog.Error.log("Could not serialized event")
-                return NSData()
-            }
-            do {
-                #if swift(>=3.0)
-                    let data: NSData = try JSONSerialization.data(withJSONObject: event.serialized, options: []) as NSData
-                #else
-                    let data: NSData = try JSONSerialization.dataWithJSONObject(event.serialized, options: [])
-                #endif
-                return data
-            } catch {
-                SentryLog.Error.log("Could not serialized event - \(error)")
-                return NSData()
-            }
-        case .storeSavedEvent(let savedEvent):
-            return savedEvent.data
-        case .userFeedback(let userFeedback):
-            guard let data = userFeedback.serialized else {
-                SentryLog.Error.log("Could not serialize userFeedback")
-                return NSData()
-            }
-            return data as NSData
-        }
-    }
-    
-    func configureRequest(dsn dsn: DSN, request: NSMutableURLRequest) {
+    private func configureRequestWithDsn(_ dsn: DSN, request: NSMutableURLRequest) {
         let sentryHeader = dsn.xSentryAuthHeader
         request.setValue(sentryHeader.value, forHTTPHeaderField: sentryHeader.key)
         
         let data = payload
+        debugData(data)
         
         #if swift(>=3.0)
             request.httpMethod = httpMethod.rawValue
@@ -103,7 +127,7 @@ enum SentryEndpoint: Endpoint {
         case .store(_), .storeSavedEvent(_):
             do {
                 #if swift(>=3.0)
-                    request.httpBody = try data.gzipped(withCompressionLevel: -1)
+                    request.httpBody = try (data as NSData).gzipped(withCompressionLevel: -1)
                 #else
                     request.HTTPBody = try data.gzippedWithCompressionLevel(-1)
                 #endif
@@ -128,71 +152,9 @@ enum SentryEndpoint: Endpoint {
         }
     }
     
-    func send(dsn: DSN, finished: SentryEndpointRequestFinished? = nil) {
-        guard let url = route(dsn: dsn) else {
-            SentryLog.Error.log("Cannot find route for \(self)")
-            finished?(false)
-            return
-        }
-        
-        debugData(payload)
-        
+    private func debugData(_ data: Data) {
         #if swift(>=3.0)
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
-        #else
-            let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
-        #endif
-        
-        configureRequest(dsn: dsn, request: request)
-        
-        #if swift(>=3.0)
-            let config = URLSessionConfiguration.default
-            let session = URLSession(configuration: config)
-            session.dataTask(with: request as URLRequest) { data, response, error in
-                var success = false
-                
-                // Returns success if we have data and 200 response code
-                if let data = data, let response = response as? HTTPURLResponse {
-                    SentryLog.Debug.log("status = \(response.statusCode)")
-                    SentryLog.Debug.log("response = \(NSString(data: data, encoding: String.Encoding.utf8.rawValue))")
-                    
-                    success = 200..<300 ~= response.statusCode
-                }
-                if let error = error {
-                    SentryLog.Error.log("error = \(error)")
-                    
-                    success = false
-                }
-                
-                finished?(success)
-            }.resume()
-        #else
-            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-            let session = NSURLSession(configuration: config)
-            session.dataTaskWithRequest(request) { data, response, error in
-                var success = false
-            
-                // Returns success if we have data and 200 response code
-                if let data = data, let response = response as? NSHTTPURLResponse {
-                    SentryLog.Debug.log("status = \(response.statusCode)")
-                    SentryLog.Debug.log("response = \(NSString(data: data, encoding: NSUTF8StringEncoding))")
-            
-                    success = 200..<300 ~= response.statusCode
-                }
-                if let error = error {
-                    SentryLog.Error.log("error = \(error)")
-            
-                    success = false
-                }
-            
-                finished?(success)
-            }.resume()
-        #endif
-    }
-    
-    private func debugData(_ data: NSData) {
-        #if swift(>=3.0)
-            guard let body = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) else {
+            guard let body = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else {
                 return
             }
         #else

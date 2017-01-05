@@ -20,12 +20,20 @@ protocol APIRequestProtocol: URLRequestConvertible {
     //method
     var method: HTTPMethod { get }
     
+    //TODO: - 添加http头的处理
+    //header
+    var headers: HTTPHeaders { get }
+    
     var alert: Bool { get }
 }
 
 extension APIRequestProtocol {
     static var baseURL: String {
         return G.platformBaseUrl
+    }
+    
+    var headers: HTTPHeaders {
+        return [:]
     }
 }
 

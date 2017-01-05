@@ -18,6 +18,8 @@
 		7018C9E91DE6959E0043E2E1 /* UIColor_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018C9E81DE6959E0043E2E1 /* UIColor_Ext.swift */; };
 		703760141DEFC4DE003391AC /* StartHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703760131DEFC4DE003391AC /* StartHelpView.swift */; };
 		703760181DEFCB72003391AC /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703760171DEFCB72003391AC /* SplashScreen.swift */; };
+		7067C7AF1E1CCED90091CBC8 /* RHCTCommonGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067C7AD1E1CCED90091CBC8 /* RHCTCommonGifHeader.swift */; };
+		7067C7B01E1CCED90091CBC8 /* RHCTHomeGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067C7AE1E1CCED90091CBC8 /* RHCTHomeGifHeader.swift */; };
 		7092D1861DED21F1003C28C0 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092D1851DED21F1003C28C0 /* HttpRequest.swift */; };
 		7092D1881DED2221003C28C0 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092D1871DED2221003C28C0 /* RequestError.swift */; };
 		70C8616E1DE6CA5C00815E37 /* ShareSDK_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C8616D1DE6CA5C00815E37 /* ShareSDK_Ext.swift */; };
@@ -78,6 +80,8 @@
 		7018C9E81DE6959E0043E2E1 /* UIColor_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Ext.swift; sourceTree = "<group>"; };
 		703760131DEFC4DE003391AC /* StartHelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartHelpView.swift; sourceTree = "<group>"; };
 		703760171DEFCB72003391AC /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		7067C7AD1E1CCED90091CBC8 /* RHCTCommonGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHCTCommonGifHeader.swift; sourceTree = "<group>"; };
+		7067C7AE1E1CCED90091CBC8 /* RHCTHomeGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHCTHomeGifHeader.swift; sourceTree = "<group>"; };
 		7092D1851DED21F1003C28C0 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		7092D1871DED2221003C28C0 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		70C8616D1DE6CA5C00815E37 /* ShareSDK_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSDK_Ext.swift; sourceTree = "<group>"; };
@@ -174,6 +178,15 @@
 			path = starthelp;
 			sourceTree = "<group>";
 		};
+		7067C7AC1E1CCED90091CBC8 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				7067C7AD1E1CCED90091CBC8 /* RHCTCommonGifHeader.swift */,
+				7067C7AE1E1CCED90091CBC8 /* RHCTHomeGifHeader.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		70CED6861DE54C2F00FB463A /* remindview */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +266,7 @@
 		70DF1AA41DE542D3009DC176 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7067C7AC1E1CCED90091CBC8 /* Refresh */,
 				703760121DEFC4A9003391AC /* starthelp */,
 				70CF9AF21DED8CAD00E244F9 /* service */,
 				70D84D0E1DEC1F68002F16C9 /* http */,
@@ -559,6 +573,7 @@
 				70F4FD2C1DE57B2B00F3D218 /* SecondViewController.swift in Sources */,
 				70CF9AF41DED8CC000E244F9 /* BaseServiceHandler.swift in Sources */,
 				70DF1AA01DE5320E009DC176 /* User.swift in Sources */,
+				7067C7B01E1CCED90091CBC8 /* RHCTHomeGifHeader.swift in Sources */,
 				70CF9B0A1DEE7C5C00E244F9 /* MiscServiceHandlers.swift in Sources */,
 				7018C9E31DE684930043E2E1 /* WebViewDeleClass.swift in Sources */,
 				70CF9B021DEE6D5900E244F9 /* Topic.swift in Sources */,
@@ -585,6 +600,7 @@
 				70F4FD281DE57B1A00F3D218 /* FirstViewController.swift in Sources */,
 				70CF9B081DEE7C5100E244F9 /* MiscService.swift in Sources */,
 				7018C9E11DE684930043E2E1 /* WebToolView.swift in Sources */,
+				7067C7AF1E1CCED90091CBC8 /* RHCTCommonGifHeader.swift in Sources */,
 				70CF9B101DEEA93600E244F9 /* CurrentUserServiceHandlers.swift in Sources */,
 				7018C9E91DE6959E0043E2E1 /* UIColor_Ext.swift in Sources */,
 			);

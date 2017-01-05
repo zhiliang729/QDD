@@ -142,9 +142,10 @@ extension G {
 }
 
 //MARK: - UserAgent组装
+import AdSupport
 extension G {
     class func globalUserAgent() -> String {
-        //2.0.0/iOS/7.0/iPhone/Jpush registrationID/渠道/uuid
+        //2.0.0/iOS/7.0/iPhone/Jpush registrationID/渠道/adid
         let appVersion = G.appVersion
         let sysType = "iOS"
         let sysVersion = UIDevice.current.systemVersion
@@ -163,8 +164,10 @@ extension G {
         
         let jpushid = JPUSHService.registrationID() ?? ""
         let appstore = "app_store"
-        let uuid = "abcdef12345676"
-        let userAgentInfoArr = [appVersion, sysType, sysVersion, identifier, jpushid, appstore, uuid]
+
+        let adid = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        
+        let userAgentInfoArr = [appVersion, sysType, sysVersion, identifier, jpushid, appstore, adid]
         let userAgent = userAgentInfoArr.joined(separator: "/")
         
         #if DEBUG
